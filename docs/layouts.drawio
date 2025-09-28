@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="deSxDQOu9u_3aHM_2UQ1" name="ページ1">
-        <mxGraphModel dx="1910" dy="2163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="4042" dy="1243" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -967,9 +967,6 @@
                 <mxCell id="386" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;メールアドレスを入力した場合、予約内容の確認メールを送信しました。&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;キャンセルや変更は電話にてご連絡ください。&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
                     <mxGeometry x="1850" y="450" width="500" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="387" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;メールアドレスを入力した場合、予約内容の確認メールを送信しました。&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;キャンセルや変更は電話にてご連絡ください。&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="2445" y="-590" width="500" height="50" as="geometry"/>
-                </mxCell>
                 <mxCell id="388" value="ホームへ戻る" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
                     <mxGeometry x="2000" y="520" width="200" height="60" as="geometry"/>
                 </mxCell>
@@ -1109,7 +1106,7 @@
                 <mxCell id="445" value="&lt;font style=&quot;color: rgb(128, 128, 128);&quot;&gt;&amp;nbsp;予約一覧&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="710">
                     <mxGeometry x="40" y="52" width="190" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="446" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;&amp;nbsp;予約カレンダー&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="710">
+                <mxCell id="446" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;&amp;nbsp;営業日カレンダー&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="710">
                     <mxGeometry x="240" y="52" width="220" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="447" value="管理画面から営業日を選択すると、その日を予約可能日として設定できます。&lt;br data-end=&quot;60&quot; data-start=&quot;57&quot;&gt;&lt;br/&gt;設定された日には自動的に予約枠が生成され、患者様が予約フォームから選択できるようになります。" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="710">
@@ -1428,65 +1425,104 @@
                 <mxCell id="499" value="&lt;font style=&quot;font-size: 60px;&quot;&gt;保存&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="710">
                     <mxGeometry x="636" y="1332" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="713" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;診察予約フォーム&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+                <mxCell id="876" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;1　&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=default;fillColor=none;" vertex="1" parent="710">
+                    <mxGeometry x="1270" y="387" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="877" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1枠の登録人数&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="710">
+                    <mxGeometry x="1030" y="397" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="878" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;名&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="710">
+                    <mxGeometry x="1380" y="402" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="799" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-1654" y="2338" width="1480" height="1070" as="geometry"/>
+                </mxCell>
+                <mxCell id="792" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;診察予約フォーム&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="799">
+                    <mxGeometry width="1480" height="1070" as="geometry"/>
+                </mxCell>
+                <mxCell id="793" value="ログイン画面" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="799">
+                    <mxGeometry x="43.5" y="90" width="1390" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="794" value="&lt;span style=&quot;font-size: 36px;&quot;&gt;ログインID&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="799">
+                    <mxGeometry x="203.5" y="320" width="310" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="795" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;example@example.com&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="799">
+                    <mxGeometry x="208.5" y="400" width="1055" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="796" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;パスワード&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="799">
+                    <mxGeometry x="203.5" y="530" width="310" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="797" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;example@example.com&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="799">
+                    <mxGeometry x="203.5" y="610" width="1060" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="798" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;ログイン&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="799">
+                    <mxGeometry x="588.5" y="830" width="250" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="817" value="" style="group" vertex="1" connectable="0" parent="1">
                     <mxGeometry x="1580" y="2338" width="1480" height="1692" as="geometry"/>
                 </mxCell>
-                <mxCell id="766" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="1697.75" y="2990" width="1282.25" height="760" as="geometry"/>
+                <mxCell id="713" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;診察予約フォーム&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="817">
+                    <mxGeometry width="1480" height="1692" as="geometry"/>
                 </mxCell>
-                <mxCell id="743" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;診療の参考となりますのでご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" width="561.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="744" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;１．いつ頃から症状がありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="40" width="551.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="745" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;今日（来院日　当日）&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="80" width="551.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="746" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;2．どのような症状ですか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="123" width="341.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="747" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;発熱 頭痛　咳　鼻水　鼻づまり　倦怠感　下痢　&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;味覚障害　吐き気　めまい　関節痛　その他&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry y="170" width="611.5" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="748" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;3&lt;/font&gt;．その他の症状の場合は、ご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="240" width="531.5" height="30" as="geometry"/>
+                <mxCell id="766" value="" style="group" vertex="1" connectable="0" parent="817">
+                    <mxGeometry x="117.75" y="652" width="1282.25" height="760" as="geometry"/>
                 </mxCell>
                 <mxCell id="749" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
                     <mxGeometry x="0.75" y="270" width="1261.5" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="750" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 1&lt;/font&gt;．既往歴・治療中の病気はありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="320" width="581.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="751" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="350" width="341.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="752" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 2&lt;/font&gt;．【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry y="400" width="772.25" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="753" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
                     <mxGeometry x="0.75" y="440" width="1281.5" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="754" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 1&lt;/font&gt;．お薬や食べ物のアレルギーはありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="490" width="621.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="755" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="530" width="341.5" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="756" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 2&lt;/font&gt;．【はい】の方のみ、お薬名や食べ物を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="580" width="501.5" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="757" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
                     <mxGeometry x="0.75" y="610" width="1281.5" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="758" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;6&lt;/font&gt;．事前にお伝えしたい内容がございましたらご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
-                    <mxGeometry x="0.75" y="680" width="671.5" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="759" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="766">
                     <mxGeometry x="0.75" y="720" width="1271.5" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="724" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="1697.75" y="2660" width="1270" height="240" as="geometry"/>
+                <mxCell id="801" value="" style="group" vertex="1" connectable="0" parent="766">
+                    <mxGeometry width="772.25" height="710" as="geometry"/>
+                </mxCell>
+                <mxCell id="743" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;診療の参考となりますのでご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" width="561.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="744" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;１．いつ頃から症状がありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="40" width="551.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="745" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;今日（来院日　当日）&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="80" width="551.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="746" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;2．どのような症状ですか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="123" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="747" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;発熱 頭痛　咳　鼻水　鼻づまり　倦怠感　下痢　&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;味覚障害　吐き気　めまい　関節痛　その他&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry y="170" width="611.5" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="748" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;3&lt;/font&gt;．その他の症状の場合は、ご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="240" width="531.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="750" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 1&lt;/font&gt;．既往歴・治療中の病気はありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="320" width="581.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="751" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="350" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="752" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 2&lt;/font&gt;．【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry y="400" width="772.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="754" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 1&lt;/font&gt;．お薬や食べ物のアレルギーはありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="490" width="621.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="755" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="530" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="756" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 2&lt;/font&gt;．【はい】の方のみ、お薬名や食べ物を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="580" width="501.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="758" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;6&lt;/font&gt;．事前にお伝えしたい内容がございましたらご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="801">
+                    <mxGeometry x="0.75" y="680" width="671.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="724" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="817">
+                    <mxGeometry x="117.75" y="322" width="1270" height="240" as="geometry"/>
                 </mxCell>
                 <mxCell id="725" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="724">
                     <mxGeometry width="1270" height="40" as="geometry"/>
@@ -1566,11 +1602,11 @@
                         <mxRectangle width="1018" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="722" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;患者様情報&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="1697.75" y="2620" width="300" height="40" as="geometry"/>
+                <mxCell id="722" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;患者様情報&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="817">
+                    <mxGeometry x="117.75" y="282" width="300" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="715" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="1697.75" y="2460" width="1272.25" height="121" as="geometry"/>
+                <mxCell id="715" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="817">
+                    <mxGeometry x="117.75" y="122" width="1272.25" height="121" as="geometry"/>
                 </mxCell>
                 <mxCell id="716" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="715">
                     <mxGeometry width="1272.25" height="41" as="geometry"/>
@@ -1611,35 +1647,233 @@
                         <mxRectangle width="1020" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="770" value="PDFダウンロード" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="2737.75" y="2360" width="230" height="60" as="geometry"/>
+                <mxCell id="770" value="PDFダウンロード" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="817">
+                    <mxGeometry x="1157.75" y="22" width="230" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="772" value="予約キャンセル" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="2020" y="3840" width="230" height="90" as="geometry"/>
+                <mxCell id="772" value="予約キャンセル" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="817">
+                    <mxGeometry x="440" y="1502" width="230" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="773" value="来院済み" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="2390" y="3840" width="230" height="90" as="geometry"/>
+                <mxCell id="773" value="来院済み" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="817">
+                    <mxGeometry x="810" y="1502" width="230" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="792" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;診察予約フォーム&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="36.5" y="4150" width="1480" height="1070" as="geometry"/>
+                <mxCell id="874" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;編集&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="817">
+                    <mxGeometry x="1210" y="128" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="793" value="ログイン画面" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="80" y="4240" width="1390" height="90" as="geometry"/>
+                <mxCell id="818" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="1580" y="4250" width="1480" height="1692" as="geometry"/>
                 </mxCell>
-                <mxCell id="794" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;メールアドレス&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="240" y="4470" width="310" height="60" as="geometry"/>
+                <mxCell id="819" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;診察予約フォーム&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="818">
+                    <mxGeometry x="-10" y="22" width="1480" height="1692" as="geometry"/>
                 </mxCell>
-                <mxCell id="795" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;example@example.com&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="245" y="4550" width="1055" height="70" as="geometry"/>
+                <mxCell id="820" value="" style="group" vertex="1" connectable="0" parent="818">
+                    <mxGeometry x="117.75" y="652" width="1282.25" height="760" as="geometry"/>
                 </mxCell>
-                <mxCell id="796" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;パスワード&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="240" y="4680" width="310" height="60" as="geometry"/>
+                <mxCell id="821" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="820">
+                    <mxGeometry x="0.75" y="270" width="1261.5" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="797" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;example@example.com&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="240" y="4760" width="1060" height="70" as="geometry"/>
+                <mxCell id="822" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="820">
+                    <mxGeometry x="0.75" y="440" width="1281.5" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="798" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;ログイン&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="625" y="4980" width="250" height="110" as="geometry"/>
+                <mxCell id="823" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="820">
+                    <mxGeometry x="0.75" y="610" width="1281.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="824" value="&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;テストテスト&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="820">
+                    <mxGeometry x="0.75" y="720" width="1271.5" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="825" value="" style="group" vertex="1" connectable="0" parent="820">
+                    <mxGeometry width="772.25" height="710" as="geometry"/>
+                </mxCell>
+                <mxCell id="826" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;診療の参考となりますのでご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" width="561.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="827" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;１．いつ頃から症状がありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="40" width="551.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="828" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;今日（来院日　当日）&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="80" width="551.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="829" value="&lt;span style=&quot;color: rgb(71, 71, 71); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;2．どのような症状ですか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="123" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="830" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;発熱 頭痛　咳　鼻水　鼻づまり　倦怠感　下痢　&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;味覚障害　吐き気　めまい　関節痛　その他&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry y="170" width="611.5" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="831" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;3&lt;/font&gt;．その他の症状の場合は、ご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="240" width="531.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="832" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 1&lt;/font&gt;．既往歴・治療中の病気はありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="320" width="581.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="833" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="350" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="834" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;4 - 2&lt;/font&gt;．【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry y="400" width="772.25" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="835" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 1&lt;/font&gt;．お薬や食べ物のアレルギーはありますか？&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="490" width="621.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="836" value="&lt;font color=&quot;#474747&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;はい　いいえ&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="530" width="341.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="837" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;5 - 2&lt;/font&gt;．【はい】の方のみ、お薬名や食べ物を記入してください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="580" width="501.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="838" value="&lt;span style=&quot;background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: メイリオ, Meiryo, &amp;quot;ヒラギノ角ゴ Pro W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, Osaka, &amp;quot;ＭＳ Ｐゴシック&amp;quot;, &amp;quot;MS PGothic&amp;quot;, sans-serif;&quot;&gt;&lt;font color=&quot;#474747&quot;&gt;6&lt;/font&gt;．事前にお伝えしたい内容がございましたらご記入ください。&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="825">
+                    <mxGeometry x="0.75" y="680" width="671.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="839" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="818">
+                    <mxGeometry x="117.75" y="322" width="1270" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="840" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="841" value="　氏名" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="840">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="842" value="&amp;nbsp; 樺澤憲悟" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="840">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="843" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry y="40" width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="844" value="　氏名（ふりがな）" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="843">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="845" value="&amp;nbsp; かばさわけんご" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="843">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="846" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry y="80" width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="847" value="　生年月日" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="846">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="848" value="&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 21px;&quot;&gt;2002年5月3日&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="846">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="849" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry y="120" width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="850" value="　性別" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="849">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="851" value="&amp;nbsp; 男性" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="849">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="852" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry y="160" width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="853" value="&amp;nbsp; &amp;nbsp;電話番号" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="852">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="854" value="&amp;nbsp; 08011112222" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="852">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="855" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="839">
+                    <mxGeometry y="200" width="1270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="856" value="　メールアドレス" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="855">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="857" value="&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-size: 22px;&quot;&gt;example@example.com&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="855">
+                    <mxGeometry x="252" width="1018" height="40" as="geometry">
+                        <mxRectangle width="1018" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="858" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;患者様情報&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="818">
+                    <mxGeometry x="117.75" y="282" width="300" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="859" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="818">
+                    <mxGeometry x="117.75" y="122" width="1272.25" height="121" as="geometry"/>
+                </mxCell>
+                <mxCell id="860" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="859">
+                    <mxGeometry width="1272.25" height="41" as="geometry"/>
+                </mxCell>
+                <mxCell id="861" value="　診療日" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="860">
+                    <mxGeometry width="252" height="41" as="geometry">
+                        <mxRectangle width="252" height="41" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="862" value="&amp;nbsp; 2025年10月2日（木）" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="860">
+                    <mxGeometry x="252" width="1020" height="41" as="geometry">
+                        <mxRectangle width="1020" height="41" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="863" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="859">
+                    <mxGeometry y="41" width="1272.25" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="864" value="　診療時間帯" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="863">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="865" value="&amp;nbsp; 9:00~9:30" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="863">
+                    <mxGeometry x="252" width="1020" height="40" as="geometry">
+                        <mxRectangle width="1020" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="866" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="859">
+                    <mxGeometry y="81" width="1272.25" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="867" value="&amp;nbsp; &amp;nbsp; 予約番号" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="866">
+                    <mxGeometry width="252" height="40" as="geometry">
+                        <mxRectangle width="252" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="868" value="&amp;nbsp; &amp;nbsp;00001" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;align=left;" vertex="1" parent="866">
+                    <mxGeometry x="252" width="1020" height="40" as="geometry">
+                        <mxRectangle width="1020" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="869" value="PDFダウンロード" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="818">
+                    <mxGeometry x="1157.75" y="22" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="870" value="キャンセル取り消し" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="818">
+                    <mxGeometry x="390" y="1490" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="871" value="来院済み取り消し" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="818">
+                    <mxGeometry x="780" y="1490" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="873" value="&lt;font style=&quot;font-size: 40px;&quot; face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;or&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="818">
+                    <mxGeometry x="690" y="1505" width="50" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="872" value="&lt;font face=&quot;メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;キャンセルか、来院済みを押した場合&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=21;" vertex="1" parent="1">
+                    <mxGeometry x="1580" y="4210" width="671.5" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="875" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;編集&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="2790" y="2507" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="883" value="　日時を選択する" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="130.5" y="2495.5" width="649.5" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="884" value="　予約番号を選択する" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="2495.5" width="629.5" height="53" as="geometry"/>
+                </mxCell>
+                <mxCell id="885" value="　状況を選択する" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="130.5" y="2600" width="649.5" height="53" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
