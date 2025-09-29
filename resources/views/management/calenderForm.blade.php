@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="weekday-controls flex mb-2">
+<div class="weekday-controls flex mx-6 mt-5">
     @foreach(['日','月','火','水','木','金','土'] as $i => $day)
         <div class="border">
             <label>{{ $day }}</label>
