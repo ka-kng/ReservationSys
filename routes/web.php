@@ -7,4 +7,5 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-Route::get('/schedule', [ScheduleController ::class, 'index'])->name('calender.index');
+Route::get('/schedule', [ScheduleController ::class, 'index'])->name('calendar.index');
+Route::post('/schedule', [ScheduleController ::class, 'store'])->name('calendar.store');

@@ -39,7 +39,7 @@
         </div>
     </header>
 
-    <main class="max-w-screen-lg mx-auto px-5">
+    <main class="max-w-screen-lg mx-auto px-6 pb-10">
         @yield('content')
     </main>
 
