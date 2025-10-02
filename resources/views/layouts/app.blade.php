@@ -27,11 +27,11 @@
         </div>
         <div>
             <nav>
-                <ul class="flex px-6 gap-1 mt-3">
-                    <li class="p-1 border">
+                <ul class="flex px-6 gap-1 mt-3 max-w-screen-lg mx-auto px-6">
+                    <li class="p-1 border border-b-0">
                         <a href="">予約一覧</a>
                     </li>
-                    <li class="p-1 border">
+                    <li class="p-1 border border-b-0">
                         <a href="">営業日カレンダー</a>
                     </li>
                 </ul>

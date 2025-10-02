@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('reservation_slots', function (Blueprint $table) {
             $table->id();
             $table->date('date');
+            $table->string('slot_type')->nullable();
             $table->time('start_time');
             $table->time('end_time');
             $table->boolean('is_available')->default(true);

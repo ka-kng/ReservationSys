@@ -17,13 +17,17 @@ class ScheduleController extends Controller
         $firstDay = \Carbon\Carbon::create($year, $month, 1)->startOfMonth();
         $lastDay = $firstDay->copy()->endOfMonth();
 
-        // $slots = Schedule::whereBetween('date', [$firstDay, $lastDay])
-        //     ->whereMonth('date', $month)
-        //     ->orderBy('date')
-        //     ->orderBy('start_time')
-        //     ->get();
+        $slots = Schedule::whereBetween('date', [$firstDay, $lastDay])
+            ->whereMonth('date', $month)
+            ->orderBy('date')
+            ->orderBy('start_time')
+            ->get();
 
-        return view('management.calendarForm', compact('year', 'month', 'firstDay', 'lastDay'));
+        $slotsByDate = $slots->groupBy(function ($slot) {
+            return Carbon::parse($slot->date)->format('Y-m-d');
+        });
+
+        return view('management.calendarForm', compact('slots', 'year', 'month', 'firstDay', 'lastDay', 'slotsByDate'));
     }
 
     /**
@@ -41,7 +45,15 @@ class ScheduleController extends Controller
     {
         $capacity = $request->input('capacity', 1);
 
-        foreach ($request->except('_token', 'capacity') as $date => $type) {
+        foreach ($request->input('dates', []) as $date => $type) {
+
+            Schedule::where('date', $date)->delete();
+
+            // holidayならここでスキップ
+            if ($type === 'holiday') {
+                continue;
+            }
+
             $timeRanges = match ($type) {
                 'morning' => [['09:00', '12:00']],
                 'afternoon' => [['16:00', '18:00']],
@@ -51,7 +63,7 @@ class ScheduleController extends Controller
             };
 
             if ($type === 'holiday') {
-                Schedule::where('date', $date)->update(['is_available' => false]);
+                Schedule::where('date', $date)->delete();
             } else {
                 foreach ($timeRanges as [$start, $end]) {
                     $startTime = Carbon::parse($start);
@@ -67,6 +79,7 @@ class ScheduleController extends Controller
                                 'end_time' => $slotEnd,
                             ],
                             [
+                                'slot_type' => $type,
                                 'capacity' => $capacity,
                                 'is_available' => true
                             ]

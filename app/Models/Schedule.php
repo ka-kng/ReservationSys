@@ -9,6 +9,6 @@ class Schedule extends Model
     protected $table = 'reservation_slots';
 
     protected $fillable = [
-        'date', 'start_time', 'end_time', 'is_available', 'capacity'
+        'date', 'slot_type', 'start_time', 'end_time', 'is_available', 'capacity'
     ];
 }

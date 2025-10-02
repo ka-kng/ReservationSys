@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <form method="POST" action="{{ route('calendar.store') }}">
+    <div class="text-center border p-6">
+        <p>管理画面から営業日を選択すると、その日を予約可能日として設定できます。</p>
+        <p>設定された日には自動的に予約枠が生成され、患者様が予約フォームから選択できるようになります。</p>
+    </div>
+
+    <form method="POST" action="{{ route('calendar.store') }}" class="mt-10">
         @csrf
         <div class="flex justify-between items-end">
             <div>
@@ -32,9 +37,9 @@
                     @foreach (['日', '月', '火', '水', '木', '金', '土'] as $i => $day)
                         <th style="width:14.2857%" class="border align-top">
                             <div>{{ $day }}</div>
-                            <select name="weekday_bulk[{{ $i }}]"
-                                class="w-full text-center border border-gray-400 mt-1">
-                                <option value=""></option>
+                            <select name="weekday_bulk[{{ $i }}]" data-weekday="{{ $i }}"
+                                class="w-full text-center border border-gray-400 mt-1 weekday-bulk">
+                                <option value="holiday"></option>
                                 <option value="morning">午前</option>
                                 <option value="afternoon">午後</option>
                                 <option value="all">1日</option>
@@ -69,12 +74,23 @@
                                 {{ $day->day }}
                             </div>
 
-                            <select name="[{{ $day->format('Y-m-d') }}]" class="w-full mt-6 text-center border border-gray-400">
-                                <option value="holiday"></option>
-                                <option value="morning">午前</option>
-                                <option value="afternoon">午後</option>
-                                <option value="all">1日</option>
+                            @php
+                                $dateKey = $day->format('Y-m-d');
+                                $value = isset($slotsByDate[$dateKey])
+                                    ? $slotsByDate[$dateKey][0]->slot_type
+                                    : 'holiday';
+                            @endphp
+
+
+                            <select name="dates[{{ $dateKey }}]"
+                                class="w-full mt-6 text-center border border-gray-400 date-select"
+                                data-weekday="{{ $day->dayOfWeek }}">
+                                <option value="holiday" {{ $value === 'holiday' ? 'selected' : '' }}></option>
+                                <option value="morning" {{ $value === 'morning' ? 'selected' : '' }}>午前</option>
+                                <option value="afternoon" {{ $value === 'afternoon' ? 'selected' : '' }}>午後</option>
+                                <option value="all" {{ $value === 'all' ? 'selected' : '' }}>1日</option>
                             </select>
+
                         </td>
 
                         @php
@@ -95,4 +111,23 @@
             </button>
         </div>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const weekdayBulkSelects = document.querySelectorAll('.weekday-bulk');
+
+            weekdayBulkSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    const weekday = this.dataset.weekday;
+                    const value = this.value;
+
+                    // 同じ曜日の日付セルをすべて更新
+                    document.querySelectorAll(`.date-select[data-weekday="${weekday}"]`)
+                        .forEach(dateSelect => {
+                            dateSelect.value = value;
+                        });
+                });
+            });
+        });
+    </script>
 @endsection
