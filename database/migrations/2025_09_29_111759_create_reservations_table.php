@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->string('reservation_number')->unique();
             $table->foreignId('patient_id')->constrained('patients')->onDelete('cascade');
             $table->foreignId('reservation_slot_id')->constrained('reservation_slots')->onDelete('cascade');
             $table->string('status')->default('reserved');  // reserved, canceled, completed

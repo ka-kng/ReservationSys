@@ -3,6 +3,9 @@ import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import jaLocale from '@fullcalendar/core/locales/ja';
 
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+
 document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('calendar');
   if (!calendarEl) return;
@@ -35,4 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
       calendar.render();
     })
     .catch(err => console.error(err));
+});
+
+flatpickr("#birth_date", {
+  dateFormat: "Y-m-d",   // 送信するフォーマット
+  altInput: true,        // 表示用にわかりやすいフォーマットを追加
+  altFormat: "Y年m月d日", // ユーザーに見える形式
+  disableMobile: true,   // スマホ対応
+   locale: {             // 日本語対応
+    months: {
+      shorthand: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+      longhand:  ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+    }
+  }
 });
