@@ -16,6 +16,5 @@ Route::get('/patients/reservations/available-dates', [ReservationController::cla
     ->name('patients.reservations.available-dates');
 
 Route::get('/reservations/slots', [ReservationController::class, 'create'])->name('reservations.create');
-Route::post('/reservations/confirm', [ReservationController::class, 'confirm'])->name('reservations.confirm');
 Route::post('/reservations/complete', [ReservationController::class, 'store'])->name('reservations.store');
-Route::get('/reservations/complete', [ReservationController::class, 'complete'])->name('reservations.complete');
+Route::get('/reservations/complate', [ReservationController::class, 'complate'])->name('reservations.complate');

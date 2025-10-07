@@ -26,7 +26,7 @@
         @csrf
         <div class="flex justify-between items-end">
             <div>
-                <a class="border p-1"
+                <a class="border border-black p-1 px-3"
                     href="{{ route('calendar.index', ['year' => now()->year, 'month' => now()->month]) }} ">今月</a>
             </div>
             <div class="flex  items-center gap-4 lg:gap-12">
@@ -38,7 +38,7 @@
             </div>
             <div class="flex items-center gap-1">
                 <label>1枠の予約人数</label>
-                <input name="capacity" type="number" min="0" class="w-10 border rounded text-center"><span>名</span>
+                <input name="capacity" type="number" min="0" class="p-1 w-12 border rounded text-center"><span>名</span>
             </div>
         </div>
 
@@ -49,12 +49,12 @@
         <table class="table-fixed w-full text-center mt-3">
             {{-- 曜日＋一括登録セレクト --}}
             <thead>
-                <tr class="h-15">
+                <tr class="h-20">
                     @foreach (['日', '月', '火', '水', '木', '金', '土'] as $i => $day)
-                        <th style="width:14.2857%" class="border align-top">
+                        <th style="width:14.2857%" class="border border-black align-top">
                             <div>{{ $day }}</div>
                             <select name="weekday_bulk[{{ $i }}]" data-weekday="{{ $i }}"
-                                class="w-full text-center border border-gray-400 mt-1 weekday-bulk">
+                                class="w-full text-center h-7 border border-gray-400 p-0 mt-1 weekday-bulk">
                                 <option value="holiday"></option>
                                 <option value="morning">午前</option>
                                 <option value="afternoon">午後</option>
@@ -80,12 +80,12 @@
                 <tr>
                     {{-- 月初まで空セル --}}
                     @for ($i = 0; $i < $weekDay; $i++)
-                        <td class="border"></td>
+                        <td class="border border-black"></td>
                     @endfor
 
                     {{-- 日付セル --}}
                     @foreach ($days as $day)
-                        <td class="border relative h-20">
+                        <td class="border border-black relative h-20">
                             <div class="absolute top-1 right-1 text-sm font-bold">
                                 {{ $day->day }}
                             </div>
@@ -99,7 +99,7 @@
 
 
                             <select name="dates[{{ $dateKey }}]"
-                                class="w-full mt-6 text-center border border-gray-400 date-select"
+                                class="w-full mt-6 h-7 text-center border border-gray-400 p-0 date-select"
                                 data-weekday="{{ $day->dayOfWeek }}">
                                 <option value="holiday" {{ $value === 'holiday' ? 'selected' : '' }}></option>
                                 <option value="morning" {{ $value === 'morning' ? 'selected' : '' }}>午前</option>

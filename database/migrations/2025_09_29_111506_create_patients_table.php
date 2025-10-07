@@ -19,6 +19,14 @@ return new class extends Migration
             $table->tinyInteger('gender');
             $table->string('phone');
             $table->string('email')->nullable();
+            $table->json('symptoms_start')->nullable();
+            $table->json('symptoms_type')->nullable();
+            $table->text('symptoms_other')->nullable();
+            $table->boolean('past_disease_flag')->nullable();
+            $table->text('past_disease_detail')->nullable();
+            $table->boolean('allergy_flag')->nullable();
+            $table->text('allergy_detail')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

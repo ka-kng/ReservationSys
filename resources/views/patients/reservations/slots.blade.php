@@ -5,7 +5,7 @@
         <h1 class="text-xl">情報入力</h1>
     </div>
 
-    <form action="{{ route('reservations.confirm') }}" method="POST" class="mt-5">
+    <form action="{{ route('reservations.store') }}" method="POST" x-data="{ open: false }" class="mt-5">
         @csrf
 
         {{-- 診療時間帯 --}}
@@ -25,7 +25,7 @@
                 <tr>
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">予約時間</th>
                     <td class="border border-gray-400 px-2">
-                        <select name="reservation_slot_id" id="reservation_slot_id" class="border p-1">
+                        <select name="reservation_slot_id" id="reservation_slot_id" class="p-1 w-full">
                             @foreach ($times as $time)
                                 <option value="{{ $time->id }}"
                                     {{ old('reservation_slot_id') == $time->id ? 'selected' : '' }}>
@@ -48,21 +48,36 @@
             </div>
             <table class="border border-gray-400 w-full text-sm mt-2">
                 <tr>
-                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">氏名</th>
+                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">
+                        氏名
+                        @if ($errors->has('name'))
+                            <p class="text-red-500 text-sm mt-1">{{ $errors->first('name') }}</p>
+                        @endif
+                    </th>
                     <td class="border border-gray-400 px-2 py-2">
                         <input name="name" type="text" class="border px-1 w-full lg:w-100" placeholder="山田太郎"
                             value="{{ old('name') }}">
                     </td>
                 </tr>
                 <tr>
-                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">氏名(ふりがな)</th>
+                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">
+                        氏名(ふりがな)
+                        @if ($errors->has('name_kana'))
+                            <p class="text-red-500 text-sm mt-1">{{ $errors->first('name_kana') }}</p>
+                        @endif
+                    </th>
                     <td class="border border-gray-400 px-2 py-1">
                         <input name="name_kana" type="text" class="border px-1 w-full lg:w-100" placeholder="やまだたろう"
                             value="{{ old('name_kana') }}">
                     </td>
                 </tr>
                 <tr>
-                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left"><label for="birth_date">生年月日</label>
+                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left"><label for="birth_date">
+                            生年月日
+                            @if ($errors->has('birth_date'))
+                                <p class="text-red-500 text-sm mt-1">{{ $errors->first('birth_date') }}</p>
+                            @endif
+                        </label>
                     </th>
                     <td class="border border-gray-400 px-2 py-1">
                         <input name="birth_date" id="birth_date" type="text" class="border px-1 w-full lg:w-100"
@@ -70,15 +85,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">性別</th>
+                    <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left">
+                        性別
+                        @if ($errors->has('gender'))
+                            <p class="text-red-500 text-sm mt-1">{{ $errors->first('gender') }}</p>
+                        @endif
+                    </th>
                     <td class="px-2 py-2 flex gap-5 items-center">
                         <div class="flex gap-1 items-center">
-                            <input id="male" name="gender" type="radio" value="男性"
+                            <input id="male" name="gender" type="radio" value="1"
                                 {{ old('gender') == '男性' ? 'checked' : '' }}>
                             <label for="male">男</label>
                         </div>
                         <div class="flex gap-1 items-center">
-                            <input id="female" name="gender" type="radio" value="女性"
+                            <input id="female" name="gender" type="radio" value="2"
                                 {{ old('gender') == '女性' ? 'checked' : '' }}>
                             <label for="female">女</label>
                         </div>
@@ -97,6 +117,9 @@
                 </div>
                 <input type="text" name="phone" class="border w-full lg:w-100 px-1 mt-2" value="{{ old('phone') }}">
                 <p class="text-sm mt-1">※ハイフンなしで、固定電話の場合は市外局番から入力してください。</p>
+                @if ($errors->has('phone'))
+                    <p class="text-red-500 text-sm mt-1">{{ $errors->first('phone') }}</p>
+                @endif
             </div>
 
             <div class="flex flex-col mt-3">
@@ -220,11 +243,23 @@
 
         {{-- ボタン --}}
         <div class="mt-3 text-center">
-            <button type="submit" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded">次へ</button>
+            <button type="button" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded" @click="open = true">送信する</button>
         </div>
-        <div class="mt-1 text-center">
-            <button type="button" onclick="history.back()"
-                class="w-full mt-4 py-2 bg-gray-400 text-lg text-white rounded">戻る</button>
+        <div class="mt-1 text-center w-full bg-gray-400 rounded mt-4 py-2">
+            <a href="{{ route('reservations.selectDate') }}" class="text-lg text-white ">
+                戻る
+            </a>
+        </div>
+
+        <div x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white rounded p-6 w-11/12 max-w-md">
+                <h2 class="text-lg font-bold mb-4">確認</h2>
+                <p class="mb-6">送信してもよろしいですか？</p>
+                <div class="flex justify-end gap-4">
+                    <button type="button" @click="open = false" class="px-4 py-2 bg-gray-300 rounded">キャンセル</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">送信</button>
+                </div>
+            </div>
         </div>
 
     </form>

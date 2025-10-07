@@ -24,12 +24,6 @@ class Reservation extends Model
         return $this->belongsTo(Patient::class);
     }
 
-    // 予約に紐づく症状
-    public function symptom()
-    {
-        return $this->hasOne(Symptom::class);
-    }
-
     // 予約スロット
     public function slot()
     {

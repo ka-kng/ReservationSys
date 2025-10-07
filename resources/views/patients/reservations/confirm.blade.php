@@ -19,7 +19,6 @@
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/4">診療日</th>
                     <td class="border border-gray-400 px-2 py-2">
                         {{ \Carbon\Carbon::parse($slot->date)->format('Y-m-d') }}
-                        <input type="hidden" name="reservation_slot_id" value="{{ $slot->id }}">
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +27,6 @@
                         {{ \Carbon\Carbon::parse($slot->start_time)->format('G:i') }}
                         ～
                         {{ \Carbon\Carbon::parse($slot->end_time)->format('G:i') }}
-                        <input type="hidden" name="reservation_slot_id" value="{{ $slot->id }}">
                     </td>
                 </tr>
             </table>
@@ -45,28 +43,24 @@
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/3">氏名</th>
                     <td class="border border-gray-400 px-2 py-2">
                         {{ $validated['name'] }}
-                        <input type="hidden" name="name" value="{{ $validated['name'] }}">
                     </td>
                 </tr>
                 <tr>
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/3">氏名(ふりがな)</th>
                     <td class="border border-gray-400 px-2 py-1">
                         {{ $validated['name_kana'] }}
-                        <input type="hidden" name="name_kana" value="{{ $validated['name_kana'] }}">
                     </td>
                 </tr>
                 <tr>
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/3">生年月日</th>
                     <td class="border border-gray-400 px-2 py-1">
                         {{ $validated['birth_date'] }}
-                        <input type="hidden" name="birth_date" value="{{ $validated['birth_date'] }}">
                     </td>
                 </tr>
                 <tr>
                     <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/3">性別</th>
                     <td class="px-2 py-2 flex gap-5 items-center">
                         {{ $validated['gender'] }}
-                        <input type="hidden" name="gender" value="{{ $validated['gender'] }}">
                     </td>
                 </tr>
             </table>
@@ -81,14 +75,12 @@
                     <label class="bg-red-500 py-1 px-2 text-white text-sm font-bold">必須</label>
                 </div>
                 <p class="mt-3">{{ $validated['phone'] }}</p>
-                <input type="hidden" name="phone" value="{{ $validated['phone'] }}">
             </div>
 
             <div class="mt-3">
                 <label for="email_main">メールアドレス【任意】</label>
                 <div>
                     <p>{{ $validated['email'] }}</p>
-                    <input type="hidden" name="email" value="{{ $validated['email'] }}">
                 </div>
             </div>
         </div>
@@ -101,7 +93,6 @@
                 <h3>1.いつ頃から症状がありますか？</h3>
                 <div class="mt-2">
                     {{ $validated['symptoms_start'] ?? '未選択' }}
-                    <input type="hidden" name="symptoms_start" value="{{ $validated['symptoms_start'] ?? '' }}">
                 </div>
             </div>
 
@@ -110,9 +101,6 @@
                 <div class="flex flex-wrap gap-5 mt-2">
                     @if (!empty($validated['symptoms_type']))
                         {{ implode('・', $validated['symptoms_type']) }}
-                        @foreach ($validated['symptoms_type'] as $type)
-                            <input type="hidden" name="symptoms_type[]" value="{{ $type }}">
-                        @endforeach
                     @else
                         未選択
                     @endif
@@ -125,7 +113,6 @@
             <h3>3.その他の症状の場合は、ご記入ください。</h3>
             <div>
                 {{ $validated['symptoms_other'] ?? 'なし' }}
-                <input type="hidden" name="symptoms_other" value="{{ $validated['symptoms_other'] ?? '' }}">
             </div>
         </div>
 
@@ -134,7 +121,6 @@
             <h3>4-1.既往歴・治療中の病気はありますか？</h3>
             <div>
                 {{ $validated['past_disease_flag'] ?? '未選択' }}
-                <input type="hidden" name="past_disease_flag" value="{{ $validated['past_disease_flag'] ?? '' }}">
             </div>
         </div>
 
@@ -142,7 +128,6 @@
             <h3>4-2.【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。</h3>
             <div>
                 {{ $validated['past_disease_detail'] ?? 'なし' }}
-                <input type="hidden" name="past_disease_detail" value="{{ $validated['past_disease_detail'] ?? '' }}">
             </div>
         </div>
 
@@ -151,7 +136,6 @@
             <h3>5-1.お薬や食べ物のアレルギーはありますか？</h3>
             <div>
                 {{ $validated['allergy_flag'] ?? '未選択' }}
-                <input type="hidden" name="allergy_flag" value="{{ $validated['allergy_flag'] ?? '' }}">
             </div>
         </div>
 
@@ -159,7 +143,6 @@
             <h3>5-2.【はい】の方のみ、お薬名や食べ物を記入してください。</h3>
             <div>
                 {{ $validated['allergy_detail'] ?? 'なし' }}
-                <input type="hidden" name="allergy_detail" value="{{ $validated['allergy_detail'] ?? '' }}">
             </div>
         </div>
 
@@ -168,7 +151,6 @@
             <h3>6.事前にお伝えしたい内容がございましたらご記入ください。</h3>
             <div>
                 {{ $validated['notes'] ?? 'なし' }}
-                <input type="hidden" name="notes" value="{{ $validated['notes'] ?? '' }}">
             </div>
         </div>
 
@@ -176,10 +158,11 @@
         <div class="mt-3 text-center">
             <button type="submit" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded">送信する</button>
         </div>
-        <div class="mt-1 text-center">
-            <button type="button" onclick="history.back()"
-                class="w-full mt-4 py-2 bg-gray-400 text-lg text-white rounded">戻る</button>
-        </div>
 
     </form>
+    <div class="mt-1 text-center w-full bg-gray-400 rounded mt-4 py-2  ">
+        <a href="{{ url()->previous() }}" class="text-lg text-white ">
+            戻る
+        </a>
+    </div>
 @endsection

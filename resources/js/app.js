@@ -1,4 +1,11 @@
 import './bootstrap';
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import jaLocale from '@fullcalendar/core/locales/ja';
@@ -24,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const dot = document.createElement('div');
           dot.textContent = arg.event.title;
           dot.classList.add(
-            'h-6', 'rounded-full', 'text-blue-500', 'text-lg',
+            'h-6', 'rounded-full', 'text-blue-500', 'text-lg', 'text-white',
             'flex', 'items-center', 'justify-center'
           );
           return { domNodes: [dot] };

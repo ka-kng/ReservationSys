@@ -18,6 +18,15 @@ class Patient extends Model
         'gender',
         'phone',
         'email',
+        'reservation_id',
+        'symptoms_start',
+        'symptoms_type',
+        'symptoms_other',
+        'past_disease_flag',
+        'past_disease_detail',
+        'allergy_flag',
+        'allergy_detail',
+        'notes'
     ];
 
     // 患者の予約一覧
