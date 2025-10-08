@@ -21,7 +21,9 @@
 <body class="">
     <header class="">
         <div class="p-6 items-center justify-between w-full bg-green-500 text-white">
-            <h1 class="text-lg xl:text-2xl">診察予約フォーム</h1>
+            <h1 class="text-lg xl:text-2xl">
+                <a href="{{ route('reservations.selectDate') }}">診察予約フォーム</a>
+            </h1>
         </div>
     </header>
 

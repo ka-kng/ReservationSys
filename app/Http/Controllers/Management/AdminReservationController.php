@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class AdminReservationController extends Controller
@@ -12,7 +13,9 @@ class AdminReservationController extends Controller
      */
     public function index()
     {
-        return view('management.reservationList');
+        $reservations = Reservation::with(['patient', 'slot'])->get();
+
+        return view('management.reservationList', compact('reservations'));
     }
 
     /**
@@ -36,7 +39,9 @@ class AdminReservationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);
+
+        return view('management.reservationShow', compact('reservation'));
     }
 
     /**

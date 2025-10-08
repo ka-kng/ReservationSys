@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mt-5 p-2 border">
+    <div class="mt-5 p-2 border border-black">
         <h1 class="text-xl">情報入力</h1>
     </div>
 

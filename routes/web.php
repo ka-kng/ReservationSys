@@ -9,6 +9,7 @@ Route::get('/schedule', [ScheduleController::class, 'index'])->name('calendar.in
 Route::post('/schedule', [ScheduleController::class, 'store'])->name('calendar.store');
 
 Route::get('/reservations/list', [AdminReservationController::class, 'index'])->name('reservations.index');
+Route::get('/reservations/show/{id}', [AdminReservationController::class, 'show'])->name('reservations.show');
 
 
 Route::get('/', [ReservationController::class, 'selectDate'])->name('reservations.selectDate');
@@ -17,4 +18,4 @@ Route::get('/patients/reservations/available-dates', [ReservationController::cla
 
 Route::get('/reservations/slots', [ReservationController::class, 'create'])->name('reservations.create');
 Route::post('/reservations/complete', [ReservationController::class, 'store'])->name('reservations.store');
-Route::get('/reservations/complate', [ReservationController::class, 'complate'])->name('reservations.complate');
+Route::get('/reservations/complete', [ReservationController::class, 'complete'])->name('reservations.complete');

@@ -8,6 +8,7 @@ use App\Models\Reservation;
 use App\Models\ReservationSlot;
 use App\Models\Schedule;
 use App\Models\Symptom;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -33,6 +34,10 @@ class ReservationController extends Controller
     public function create(Request $request)
     {
         $date = $request->query('date');
+
+        if (!$date) {
+            return redirect()->route('reservations.selectDate');
+        }
 
         $times = Schedule::where('date', $date)
             ->where('is_available', true)
@@ -62,6 +67,8 @@ class ReservationController extends Controller
             'allergy_detail' => 'nullable|string',
             'notes' => 'nullable|string',
         ]);
+
+        $reservation = null;
 
         DB::transaction(function () use ($validated, $request) {
 
@@ -98,29 +105,33 @@ class ReservationController extends Controller
             ]);
 
             $request->session()->put('reservation', [
-                'patient' => $patient->toArray(),
-                'reservation' => $reservation->toArray(),
-                'slot' => $slot->toArray(),
+                'reservation_number' => $reservation->reservation_number,
+                'date' => $slot->date,         // 文字列のまま
+                'start_time' => Carbon::parse($slot->start_time)->format('H:i'),
+                'end_time' => Carbon::parse($slot->end_time)->format('H:i'),
             ]);
 
+            session([
+                'reservation_completed' => true,
+                'reservation_id' => $reservation->id,
+            ]);
         });
 
-
-        return redirect()->route('reservations.complate')->with('success', '予約が完了しました');
+        return redirect()->route('reservations.complete')->with('success', '予約が完了しました');
     }
 
-    public function complate()
+    public function complete()
     {
-        if (!session('reservation_complated')) {
+        if (!session('reservation_completed')) {
             return redirect()->route('reservations.create')
                 ->withErrors(['error' => '不正なアクセスです。']);
         }
 
-        $info = session('reservation_info');
+        $info = session('reservation');
 
         // セッション削除
-        session()->forget(['reservation_complated', 'reservation_info']);
+        session()->forget(['reservation_completed', 'reservation']);
 
-        return view('patients.reservations.complate', compact('info'));
+        return view('patients.reservations.complete', compact('info'));
     }
 }

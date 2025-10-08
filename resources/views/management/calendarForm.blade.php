@@ -5,11 +5,11 @@
     <div>
         <nav>
             <ul class="flex gap-2 mt-3 max-w-screen-lg mx-auto">
-                <li class="p-1 px-3 border border-b-0">
+                <li class="p-1 px-3 border border-b-0 border-black">
                     <a href="{{ route('reservations.index') }}"
                         class="{{ Route::is('reservations.*') ? 'font-bold text-black' : 'text-gray-400' }}">予約一覧</a>
                 </li>
-                <li class="p-1 px-3 border border-b-0">
+                <li class="p-1 px-3 border border-b-0 border-black">
                     <a href="{{ route('calendar.index') }}"
                         class="{{ Route::is('calendar.*') ? 'font-bold text-black' : 'text-gray-400' }}">営業日カレンダー</a>
                 </li>
@@ -17,7 +17,7 @@
         </nav>
     </div>
 
-    <div class="text-center border p-6">
+    <div class="text-center border border-black p-6">
         <p>管理画面から営業日を選択すると、その日を予約可能日として設定できます。</p>
         <p>設定された日には自動的に予約枠が生成され、患者様が予約フォームから選択できるようになります。</p>
     </div>
@@ -55,7 +55,7 @@
                             <div>{{ $day }}</div>
                             <select name="weekday_bulk[{{ $i }}]" data-weekday="{{ $i }}"
                                 class="w-full text-center h-7 border border-gray-400 p-0 mt-1 weekday-bulk">
-                                <option value="holiday"></option>
+                                <option value="holiday">ー</option>
                                 <option value="morning">午前</option>
                                 <option value="afternoon">午後</option>
                                 <option value="all">1日</option>
@@ -101,7 +101,7 @@
                             <select name="dates[{{ $dateKey }}]"
                                 class="w-full mt-6 h-7 text-center border border-gray-400 p-0 date-select"
                                 data-weekday="{{ $day->dayOfWeek }}">
-                                <option value="holiday" {{ $value === 'holiday' ? 'selected' : '' }}></option>
+                                <option value="holiday" {{ $value === 'holiday' ? 'selected' : '' }}>ー</option>
                                 <option value="morning" {{ $value === 'morning' ? 'selected' : '' }}>午前</option>
                                 <option value="afternoon" {{ $value === 'afternoon' ? 'selected' : '' }}>午後</option>
                                 <option value="all" {{ $value === 'all' ? 'selected' : '' }}>1日</option>

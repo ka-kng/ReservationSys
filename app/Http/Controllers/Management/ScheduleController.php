@@ -30,27 +30,31 @@ class ScheduleController extends Controller
         return view('management.calendarForm', compact('slots', 'year', 'month', 'firstDay', 'lastDay', 'slotsByDate'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $capacity = $request->input('capacity', 1);
 
         foreach ($request->input('dates', []) as $date => $type) {
 
-            Schedule::where('date', $date)->delete();
+            $existingSlots = Schedule::where('date', $date)->get();
 
-            // holidayならここでスキップ
+            // 既存予約がないスロットは削除
+            foreach ($existingSlots as $slot) {
+                if ($slot->reservations()->count() === 0) {
+                    $slot->delete();
+                }
+            }
+
             if ($type === 'holiday') {
+                // 予約がないスロットだけ非表示
+                Schedule::where('date', $date)
+                    ->whereDoesntHave('reservations')
+                    ->update(['is_available' => false]);
                 continue;
             }
 
@@ -63,7 +67,8 @@ class ScheduleController extends Controller
             };
 
             if ($type === 'holiday') {
-                Schedule::where('date', $date)->delete();
+                Schedule::where('date', $date)->update(['is_available' => false]);
+                continue;
             } else {
                 foreach ($timeRanges as [$start, $end]) {
                     $startTime = Carbon::parse($start);
@@ -72,7 +77,7 @@ class ScheduleController extends Controller
                     while ($startTime < $endTime) {
                         $slotEnd = $startTime->copy()->addMinutes(30);
 
-                        Schedule::updateOrCreate(
+                        $slot = Schedule::firstOrNew(
                             [
                                 'date' => $date,
                                 'start_time' => $startTime,
@@ -81,10 +86,19 @@ class ScheduleController extends Controller
                             [
                                 'slot_type' => $type,
                                 'capacity' => $capacity,
-                                'is_available' => true
+                                'is_available' => true,
                             ]
                         );
 
+                        if ($slot->exists && $slot->reservations()->count() > 0) {
+                            $slot->is_available = true;
+                        } else {
+                            $slot->slot_type = $type;
+                            $slot->capacity = $capacity;
+                            $slot->is_available = true;
+                        }
+
+                        $slot->save();
                         $startTime = $slotEnd;
                     }
                 }
@@ -92,37 +106,5 @@ class ScheduleController extends Controller
         }
 
         return redirect()->back()->with('success', '営業日を登録しました');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mt-5 p-2 border">
+    <div class="mt-5 p-2 border border-black">
         <h1 class="text-xl">○○病院</h1>
     </div>
 
@@ -26,7 +26,7 @@
         </table>
     </div>
 
-    <div class="mt-5 p-2 border">
+    <div class="mt-5 p-2 border border-black">
         <h1 class="text-xl">診療時間</h1>
     </div>
 
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div class="mt-5 p-2 border">
+    <div class="mt-5 p-2 border border-black">
         <h1 class="text-xl">予約日の選択</h1>
     </div>
 
