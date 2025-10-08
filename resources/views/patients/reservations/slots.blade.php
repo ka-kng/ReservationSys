@@ -98,7 +98,7 @@
                             <label for="male">男</label>
                         </div>
                         <div class="flex gap-1 items-center">
-                            <input id="female" name="gender" type="radio" value="2"
+                            <input id="female" name="gender" type="radio" value="0"
                                 {{ old('gender') == '女性' ? 'checked' : '' }}>
                             <label for="female">女</label>
                         </div>
