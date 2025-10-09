@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-right">
+    <div class="text-right mt-5">
+      <a href="{{ route('reservations.downloadPdf', $reservation->id) }}" class="p-2 border border-black">
         PDFダウンロード
+      </a>
+
     </div>
     <div>
         <table class="border border-gray-400 w-full mt-5 text-sm">
@@ -105,4 +108,26 @@
         <textarea name="notes" cols="30" rows="4" class="border w-full">{{ $reservation->patient->notes ?? '未入力' }}</textarea>
     </div>
 
+    <form action="{{ route('reservations.updateStatus', $reservation->id) }}" method="POST">
+        @csrf
+        @method('PATCH')
+        <div class="flex gap-12 mt-5 justify-center">
+            @if ($reservation->status === 'reserved')
+                <button name="status" value="canceled" class="p-5 bg-red-500 text-white rounded">
+                  予約キャンセル
+                </button>
+                <button name="status" value="visited" class="p-5 bg-blue-500 text-white rounded">
+                  来院済み
+                </button>
+            @elseif ($reservation->status === 'canceled')
+                <button name="status" value="reserved" class="p-5 bg-red-500 text-white rounded">
+                  キャンセル取り消し
+                </button>
+            @elseif ($reservation->status === 'visited')
+                <button name="status" value="reserved" class="p-5 bg-red-500 text-white rounded">
+                  来院済みキャンセル
+                </button>
+            @endif
+        </div>
+    </form>
 @endsection

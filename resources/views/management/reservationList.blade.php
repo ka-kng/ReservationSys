@@ -16,10 +16,23 @@
         </nav>
     </div>
 
-    <div class="text-center border border-black p-6">
-        <p>管理画面から営業日を選択すると、その日を予約可能日として設定できます。</p>
-        <p>設定された日には自動的に予約枠が生成され、患者様が予約フォームから選択できるようになります。</p>
-    </div>
+    <form method="GET" action="{{ route('reservations.index') }}">
+        <div class="text-center border border-black p-6">
+            <div class="grid grid-cols-2 gap-5">
+                <input type="text" name="reservation_number" id="reservation_number" value="{{ request('reservation_number') }}" placeholder="予約番号検索">
+                <input type="date" name="date" id="date" value="{{ request('date') }}">
+                <select name="status" id="status">
+                    <option value="all" {{ request('status') == 'all' ? 'selected' : '' }}>すべて</option>
+                    <option value="reserved" {{ request('status') == 'reserved' ? 'selected' : '' }}>予約済み</option>
+                    <option value="visited" {{ request('status') == 'visited' ? 'selected' : '' }}>来院済み</option>
+                    <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>キャンセル済み</option>
+                </select>
+            </div>
+            <button type="submit" class="mt-8 p-3 px-5 rounded bg-blue-400 text-white">
+                検索
+            </button>
+        </div>
+    </form>
 
     <table class="border border-gray-400 w-full mt-5 text-sm">
         <thead>
@@ -33,13 +46,14 @@
         </thead>
         <tbody>
             @foreach ($reservations as $reservation)
-                <tr class="text-center">
-                    <td class="border border-gray-400 px-2 py-2">
+                <tr
+                    class="text-center @if ($reservation->status === 'canceled') bg-gray-200 opacity-50 line-through @elseif ($reservation->status === 'visited') bg-green-50 @endif">
+                    <td class="border border-gray-400 px-2 py-2 underline">
                         <a href="{{ route('reservations.show', $reservation->id) }}" class="hover:text-blue-500">
                             {{ $reservation->reservation_number }}
                         </a>
                     </td>
-                    <td class="border border-gray-400 px-2 py-2">{{ $reservation->patient->name }}</td>
+                    <td class="border border-gray-400 px-2 py-2 ">{{ $reservation->patient->name }}</td>
                     <td class="border border-gray-400 px-2 py-2">
                         <p>{{ $reservation->slot->date }}</p>
                         {{ \Carbon\Carbon::parse($reservation->slot->start_time)->format('G:i') }}
@@ -48,12 +62,22 @@
                     </td>
                     <td class="border border-gray-400 px-2 py-2">{{ $reservation->patient->phone }}</td>
                     <td class="border border-gray-400 px-2 py-2">
-                        {{ match ($reservation->status) {
-                            'reserved' => '予約済み',
-                            'cancelled' => 'キャンセル済み',
-                            'attended' => '来院済み',
-                            default => $reservation->status,
-                        } }}
+                        @switch($reservation->status)
+                            @case('reserved')
+                                <span class="text-blue-600">予約済み</span>
+                            @break
+
+                            @case('canceled')
+                                <span class="text-red-600">キャンセル済み</span>
+                            @break
+
+                            @case('visited')
+                                <span class="text-green-600">来院済み</span>
+                            @break
+
+                            @default
+                                <span class="text-gray-600">{{ $reservation->status }}</span>
+                        @endswitch
                     </td>
                 </tr>
             @endforeach
