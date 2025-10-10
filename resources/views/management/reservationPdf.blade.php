@@ -18,7 +18,13 @@
         textarea,
         table {
             font-family: 'NotoSansJP', sans-serif;
-            font-size: 12px;
+            font-size: 10px;
+        }
+
+        h2,
+        h3 {
+            font-family: 'NotoSansJP', sans-serif;
+            font-weight: normal;
         }
 
         table {
@@ -30,17 +36,33 @@
         th,
         td {
             border: 1px solid #000;
-            padding: 5px;
+            padding: 3px;
             text-align: left;
+            font-weight: normal;
         }
 
         th {
             background-color: #f0f0f0;
+            font-family: 'NotoSansJP', sans-serif;
+            width: 30%;
+            table-layout: fixed;
         }
 
         h3 {
             margin-top: 20px;
             margin-bottom: 5px;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .border-b {
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            /* あると見やすい */
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -94,17 +116,50 @@
         </tr>
     </table>
 
-    <h3>症状</h3>
-    <p>いつ頃から症状がありますか？ {{ $reservation->patient->symptoms_start ?? '未入力' }}</p>
-    <p>症状の種類: {{ $reservation->patient->symptoms_type ?? '未入力' }}</p>
-    <p>その他症状: {{ $reservation->patient->symptoms_other ?? '未入力' }}</p>
+    <h3 class="border-b">症状</h3>
+    <div class="border-b">
+        <p>1.いつ頃から症状がありますか？</p>
+        <p>{{ $reservation->patient->symptoms_start ?? '未入力' }}</p>
+    </div>
 
-    <h3>既往歴・アレルギー・備考</h3>
-    <p>既往歴: {{ $reservation->patient->past_disease_flag ?? '未入力' }}</p>
-    <p>治療中の病気・服薬: {{ $reservation->patient->past_disease_detail ?? '未入力' }}</p>
-    <p>アレルギー: {{ $reservation->patient->allergy_flag ?? '未入力' }}</p>
-    <p>アレルギー詳細: {{ $reservation->patient->allergy_detail ?? '未入力' }}</p>
-    <p>備考: {{ $reservation->patient->notes ?? '未入力' }}</p>
+    <div class="border-b">
+        <p>2.どのような症状ですか？</p>
+        @if ($reservation->patient->symptoms_type)
+            {{ implode(', ', json_decode($reservation->patient->symptoms_type)) }}
+        @else
+            未入力
+        @endif
+    </div>
+
+    <div class="border-b">
+        <p>3.その他の症状</p>
+        <p>{{ $reservation->patient->symptoms_other ?? '未入力' }}</p>
+    </div>
+
+    <div class="border-b">
+        <p>4-1.既往歴・治療中の病気はありますか？</p>
+        <p>{{ $reservation->patient->past_disease_flag == 0 ? 'はい' : 'いいえ' }}</p>
+    </div>
+
+    <div class="border-b">
+        <p>4-2.治療中の病気・服薬</p>
+        <p>{{ $reservation->patient->past_disease_detail ?? '未入力' }}</p>
+    </div>
+
+    <div class="border-b">
+        <p>5-1.お薬や食べ物のアレルギーはありますか？</p>
+        <p>{{ $reservation->patient->allergy_flag == 0 ? 'はい' : 'いいえ' }}</p>
+    </div>
+
+    <div class="border-b">
+        <p>5-2.お薬名や食べ物を記入してください。</p>
+        <p>{{ $reservation->patient->allergy_detail ?? '未入力' }}</p>
+    </div>
+
+    <div class="border-b">
+        <p>6.事前にお伝えしたい内容がございましたらご記入ください。</p>
+        <p>{{ $reservation->patient->notes ?? '未入力' }}</p>
+    </div>
 
 </body>
 

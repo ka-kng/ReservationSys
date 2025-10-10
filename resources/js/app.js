@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         locale: jaLocale,
         events: events,
+        validRange: {
+          start: new Date()
+        },
         eventContent: function (arg) {
           // arg.event.title は '○'
           const dot = document.createElement('div');
@@ -57,5 +60,5 @@ flatpickr("#birth_date", {
       shorthand: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
       longhand:  ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
     }
-  }
+  },
 });

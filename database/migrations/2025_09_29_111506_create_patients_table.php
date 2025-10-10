@@ -19,7 +19,7 @@ return new class extends Migration
             $table->tinyInteger('gender');
             $table->string('phone');
             $table->string('email')->nullable();
-            $table->json('symptoms_start')->nullable();
+            $table->string('symptoms_start')->nullable();
             $table->json('symptoms_type')->nullable();
             $table->text('symptoms_other')->nullable();
             $table->boolean('past_disease_flag')->nullable();

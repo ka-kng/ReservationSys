@@ -135,6 +135,7 @@
                 <input id="email_sub" name="email_confirmation" type="email" class="border w-full lg:w-100 px-1"
                     value="{{ old('email_confirmation') }}">
             </div>
+            <p class="text-red-500 text-sm mt-1">{{ $errors->first('email') }}</p>
         </div>
 
         {{-- 症状 --}}
@@ -195,12 +196,12 @@
             @php $pastDiseaseFlag = old('past_disease_flag'); @endphp
             <div class="flex items-center gap-3 mt-3">
                 <div>
-                    <input id="disease_yes" type="radio" name="past_disease_flag" value="はい"
+                    <input id="disease_yes" type="radio" name="past_disease_flag" value="0"
                         {{ $pastDiseaseFlag == 'はい' ? 'checked' : '' }}>
                     <label for="disease_yes">はい</label>
                 </div>
                 <div>
-                    <input id="disease_no" type="radio" name="past_disease_flag" value="いいえ"
+                    <input id="disease_no" type="radio" name="past_disease_flag" value="1"
                         {{ $pastDiseaseFlag == 'いいえ' ? 'checked' : '' }}>
                     <label for="disease_no">いいえ</label>
                 </div>
@@ -218,12 +219,12 @@
             @php $allergyFlag = old('allergy_flag'); @endphp
             <div class="flex items-center gap-3 mt-3">
                 <div>
-                    <input id="allergy_yes" type="radio" name="allergy_flag" value="はい"
+                    <input id="allergy_yes" type="radio" name="allergy_flag" value="0"
                         {{ $allergyFlag == 'はい' ? 'checked' : '' }}>
                     <label for="allergy_yes">はい</label>
                 </div>
                 <div>
-                    <input id="allergy_no" type="radio" name="allergy_flag" value="いいえ"
+                    <input id="allergy_no" type="radio" name="allergy_flag" value="1"
                         {{ $allergyFlag == 'いいえ' ? 'checked' : '' }}>
                     <label for="allergy_no">いいえ</label>
                 </div>
@@ -245,11 +246,9 @@
         <div class="mt-3 text-center">
             <button type="button" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded" @click="open = true">送信する</button>
         </div>
-        <div class="mt-1 text-center w-full bg-gray-400 rounded mt-4 py-2">
-            <a href="{{ route('reservations.selectDate') }}" class="text-lg text-white ">
+            <a href="{{ route('reservations.selectDate') }}" class="mt-4 text-center text-lg text-white bg-gray-400 py-2 rounded block w-full">
                 戻る
             </a>
-        </div>
 
         <div x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white rounded p-6 w-11/12 max-w-md">

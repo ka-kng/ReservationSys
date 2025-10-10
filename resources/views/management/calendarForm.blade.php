@@ -38,7 +38,7 @@
             </div>
             <div class="flex items-center gap-1">
                 <label>1枠の予約人数</label>
-                <input name="capacity" type="number" min="0" class="p-1 w-12 border rounded text-center"><span>名</span>
+                <input name="capacity" value="1" type="number" min="0" class="p-1 w-12 border rounded text-center"><span>名</span>
             </div>
         </div>
 

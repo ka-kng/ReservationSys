@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Patients;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ReservationConfirmation;
 use App\Models\Patient;
 use App\Models\Reservation;
 use App\Models\ReservationSlot;
@@ -11,6 +12,7 @@ use App\Models\Symptom;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class ReservationController extends Controller
@@ -56,7 +58,7 @@ class ReservationController extends Controller
             'birth_date' => 'required|date',
             'gender' => 'required',
             'phone' => 'required|regex:/^\d+$/',
-            'email' => 'nullable|email',
+            'email' => 'nullable|email|confirmed',
             'reservation_slot_id' => 'required',
             'symptoms_start' => 'nullable|string',
             'symptoms_type' => 'nullable|array',
@@ -88,7 +90,7 @@ class ReservationController extends Controller
                 'phone' => $validated['phone'],
                 'email' => $validated['email'],
                 'symptoms_start' => $validated['symptoms_start'] ?? null,
-                'symptoms_type' => isset($validated['symptoms_type']) ? implode(',', $validated['symptoms_type']) : null,
+                'symptoms_type' => isset($validated['symptoms_type']) ? json_encode($validated['symptoms_type']) : null,
                 'symptoms_other' => $validated['symptoms_other'] ?? null,
                 'past_disease_flag' => $validated['past_disease_flag'] ?? null,
                 'past_disease_detail' => $validated['past_disease_detail'] ?? null,
@@ -103,6 +105,10 @@ class ReservationController extends Controller
                 'reservation_slot_id' => $validated['reservation_slot_id'],
                 'status' => 'reserved',
             ]);
+
+            if (!empty($validated['email'])) {
+                Mail::to($validated['email'])->send(new ReservationConfirmation($patient, $reservation));
+            }
 
             $request->session()->put('reservation', [
                 'reservation_number' => $reservation->reservation_number,

@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="text-right mt-5">
-      <a href="{{ route('reservations.downloadPdf', $reservation->id) }}" class="p-2 border border-black">
-        PDFダウンロード
-      </a>
+        <a href="{{ route('reservations.downloadPdf', $reservation->id) }}" class="p-2 border border-black">
+            PDFダウンロード
+        </a>
 
     </div>
     <div>
@@ -70,42 +70,46 @@
 
         <div class="mt-5">
             <h3>2.どのような症状ですか？</h3>
-            <p>{{ $reservation->patient->symptoms_type ?? '未入力' }}</p>
+            @if ($reservation->patient->symptoms_type)
+                {{ implode(', ', json_decode($reservation->patient->symptoms_type)) }}
+            @else
+                未入力
+            @endif
         </div>
     </div>
 
     {{-- その他症状 --}}
     <div class="mt-5">
         <h3>3.その他の症状の場合は、ご記入ください。</h3>
-        <textarea name="symptoms_other" cols="30" rows="4" class="border w-full">{{ $reservation->patient->symptoms_other ?? '未入力' }}</textarea>
+        <p>{{ $reservation->patient->symptoms_other ?? '未入力' }}</p>
     </div>
 
     {{-- 既往歴 --}}
     <div class="mt-5">
         <h3>4-1.既往歴・治療中の病気はありますか？</h3>
-        <p>{{ $reservation->patient->past_disease_flag ?? '未入力' }}</p>
+        <p>{{ $reservation->patient->past_disease_flag == 0 ? 'はい' : 'いいえ' }}</p>
     </div>
 
     <div class="mt-5">
         <h3>4-2.【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。</h3>
-        <textarea name="past_disease_detail" cols="30" rows="4" class="border w-full">{{ $reservation->patient->past_disease_detail ?? '未入力' }}</textarea>
+        <p>{{ $reservation->patient->past_disease_detail ?? '未入力' }}</p>
     </div>
 
     {{-- アレルギー --}}
     <div class="mt-5">
         <h3>5-1.お薬や食べ物のアレルギーはありますか？</h3>
-        <p>{{ $reservation->patient->allergy_flag ?? '未入力' }}</p>
+        <p>{{ $reservation->patient->allergy_flag == 0 ? 'はい' : 'いいえ' }}</p>
     </div>
 
     <div class="mt-5">
         <h3>5-2.【はい】の方のみ、お薬名や食べ物を記入してください。</h3>
-        <textarea name="allergy_detail" cols="30" rows="4" class="border w-full">{{ $reservation->patient->allergy_detail ?? '未入力' }}</textarea>
+        <p>{{ $reservation->patient->allergy_detail ?? '未入力' }}</p>
     </div>
 
     {{-- 事前連絡 --}}
     <div class="mt-5">
         <h3>6.事前にお伝えしたい内容がございましたらご記入ください。</h3>
-        <textarea name="notes" cols="30" rows="4" class="border w-full">{{ $reservation->patient->notes ?? '未入力' }}</textarea>
+        <p>{{ $reservation->patient->notes ?? '未入力' }}</p>
     </div>
 
     <form action="{{ route('reservations.updateStatus', $reservation->id) }}" method="POST">
@@ -114,18 +118,18 @@
         <div class="flex gap-12 mt-5 justify-center">
             @if ($reservation->status === 'reserved')
                 <button name="status" value="canceled" class="p-5 bg-red-500 text-white rounded">
-                  予約キャンセル
+                    予約キャンセル
                 </button>
                 <button name="status" value="visited" class="p-5 bg-blue-500 text-white rounded">
-                  来院済み
+                    来院済み
                 </button>
             @elseif ($reservation->status === 'canceled')
                 <button name="status" value="reserved" class="p-5 bg-red-500 text-white rounded">
-                  キャンセル取り消し
+                    キャンセル取り消し
                 </button>
             @elseif ($reservation->status === 'visited')
                 <button name="status" value="reserved" class="p-5 bg-red-500 text-white rounded">
-                  来院済みキャンセル
+                    来院済みキャンセル
                 </button>
             @endif
         </div>

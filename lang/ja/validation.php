@@ -24,7 +24,7 @@ return [
     ],
     'boolean'                => ':attributeには、\'true\'か\'false\'を指定してください。',
     'can'                    => ':attributeに権限のない値が含まれています。',
-    'confirmed'              => ':attributeと:attribute確認が一致しません。',
+    'confirmed'              => ':attributeが一致しません。',
     'contains'               => ':attributeに必須項目が含まれていません。',
     'current_password'       => 'パスワードが正しくありません。',
     'date'                   => ':attributeは、正しい日付ではありません。',
