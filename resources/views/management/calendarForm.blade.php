@@ -1,24 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div>
+    <div class="flex items-center mt-3 justify-between">
         <nav>
-            <ul class="flex gap-2 mt-3 max-w-screen-lg mx-auto">
-                <li class="p-1 px-3 border border-b-0 border-black">
+            <ul class="flex gap-2">
+                <li class="">
                     <a href="{{ route('reservations.index') }}"
-                        class="{{ Route::is('reservations.*') ? 'font-bold text-black' : 'text-gray-400' }}">予約一覧</a>
+                        class="{{ Route::is('reservations.*') ? 'font-bold text-black' : 'text-gray-400' }} p-1.5 px-3 border border-b-0 border-black">予約一覧</a>
                 </li>
-                <li class="p-1 px-3 border border-b-0 border-black">
+                <li class="">
                     <a href="{{ route('calendar.index') }}"
-                        class="{{ Route::is('calendar.*') ? 'font-bold text-black' : 'text-gray-400' }}">営業日カレンダー</a>
+                        class="{{ Route::is('calendar.*') ? 'font-bold text-black' : 'text-gray-400' }} p-1.5 px-3 border border-b-0 border-black">営業日カレンダー</a>
                 </li>
             </ul>
         </nav>
+        <div class="">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="p-1 px-3 border border-b-0 border-black">ログアウト</button>
+            </form>
+        </div>
     </div>
 
     <div class="text-center border border-black p-6">
-        <p>管理画面から営業日を選択すると、その日を予約可能日として設定できます。</p>
+        <p>営業日を選択すると、その日を予約可能日として設定できます。</p>
         <p>設定された日には自動的に予約枠が生成され、患者様が予約フォームから選択できるようになります。</p>
     </div>
 
@@ -38,7 +43,8 @@
             </div>
             <div class="flex items-center gap-1">
                 <label>1枠の予約人数</label>
-                <input name="capacity" value="1" type="number" min="0" class="p-1 w-12 border rounded text-center"><span>名</span>
+                <input name="capacity" value="1" type="number" min="0"
+                    class="p-1 w-12 border rounded text-center"><span>名</span>
             </div>
         </div>
 

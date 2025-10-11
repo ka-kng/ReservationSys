@@ -163,5 +163,7 @@ return [
     'phone' => '電話番号',
     'gender' => '性別',
     'birth_date' => '生年月日',
+    'login_id' => 'ログインID',
+    'password' => 'パスワード',
 ],
 ];

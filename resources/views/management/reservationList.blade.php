@@ -1,19 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
+    <div class="flex items-center mt-3 justify-between">
         <nav>
-            <ul class="flex gap-2 mt-3 max-w-screen-lg mx-auto">
-                <li class="p-1 px-3 border border-b-0 border-black">
+            <ul class="flex gap-2">
+                <li class="">
                     <a href="{{ route('reservations.index') }}"
-                        class="{{ Route::is('reservations.*') ? 'font-bold text-black' : 'text-gray-400' }}">予約一覧</a>
+                        class="{{ Route::is('reservations.*') ? 'font-bold text-black' : 'text-gray-400' }} p-1.5 px-3 border border-b-0 border-black">予約一覧</a>
                 </li>
-                <li class="p-1 px-3 border border-b-0 border-black">
+                <li class="">
                     <a href="{{ route('calendar.index') }}"
-                        class="{{ Route::is('calendar.*') ? 'font-bold text-black' : 'text-gray-400' }}">営業日カレンダー</a>
+                        class="{{ Route::is('calendar.*') ? 'font-bold text-black' : 'text-gray-400' }} p-1.5 px-3 border border-b-0 border-black">営業日カレンダー</a>
                 </li>
             </ul>
         </nav>
+        <div class="">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="p-1 px-3 border border-b-0 border-black">ログアウト</button>
+            </form>
+        </div>
     </div>
 
     <form method="GET" action="{{ route('reservations.index') }}">

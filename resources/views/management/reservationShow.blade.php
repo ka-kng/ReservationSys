@@ -7,7 +7,7 @@
         </a>
 
     </div>
-    <div>
+    <div class="break-words">
         <table class="border border-gray-400 w-full mt-5 text-sm">
             <tr>
                 <th class="border border-gray-400 bg-gray-100 px-2 py-2 text-left w-1/3">診療日</th>
@@ -28,7 +28,7 @@
         </table>
     </div>
 
-    <div class="mt-10">
+    <div class="mt-10 break-words">
         <p>患者者情報</p>
         <table class="border border-gray-400 w-full text-sm">
             <tr>
@@ -60,7 +60,7 @@
         </table>
     </div>
 
-    <div class="mt-10">
+    <div class="mt-10 break-words">
         <h3>診療の参考となりますのでご記入ください。</h3>
 
         <div class="mt-3">
@@ -79,35 +79,35 @@
     </div>
 
     {{-- その他症状 --}}
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>3.その他の症状の場合は、ご記入ください。</h3>
         <p>{{ $reservation->patient->symptoms_other ?? '未入力' }}</p>
     </div>
 
     {{-- 既往歴 --}}
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>4-1.既往歴・治療中の病気はありますか？</h3>
         <p>{{ $reservation->patient->past_disease_flag == 0 ? 'はい' : 'いいえ' }}</p>
     </div>
 
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>4-2.【はい】の方のみ、治療中の病気や服用中のお薬を記入してください。</h3>
         <p>{{ $reservation->patient->past_disease_detail ?? '未入力' }}</p>
     </div>
 
     {{-- アレルギー --}}
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>5-1.お薬や食べ物のアレルギーはありますか？</h3>
         <p>{{ $reservation->patient->allergy_flag == 0 ? 'はい' : 'いいえ' }}</p>
     </div>
 
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>5-2.【はい】の方のみ、お薬名や食べ物を記入してください。</h3>
         <p>{{ $reservation->patient->allergy_detail ?? '未入力' }}</p>
     </div>
 
     {{-- 事前連絡 --}}
-    <div class="mt-5">
+    <div class="mt-5 break-words">
         <h3>6.事前にお伝えしたい内容がございましたらご記入ください。</h3>
         <p>{{ $reservation->patient->notes ?? '未入力' }}</p>
     </div>

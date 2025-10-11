@@ -56,6 +56,8 @@
         p {
             margin: 0;
             line-height: 1.4;
+            overflow-wrap: break-word;
+            white-space: normal;
         }
 
         .border-b {
