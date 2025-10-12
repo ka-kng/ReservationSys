@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ReservationConfirmation;
 use App\Models\Patient;
 use App\Models\Reservation;
-use App\Models\ReservationSlot;
 use App\Models\Schedule;
-use App\Models\Symptom;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -70,11 +68,9 @@ class ReservationController extends Controller
             'notes' => 'nullable|string',
         ]);
 
-        $reservation = null;
-
         DB::transaction(function () use ($validated, $request) {
 
-            $slot = ReservationSlot::findOrFail($validated['reservation_slot_id']);
+            $slot = Schedule::findOrFail($validated['reservation_slot_id']);
 
             if ($slot->capacity <= 0) {
                 throw new \Exception('この時間は予約上限に達しています');

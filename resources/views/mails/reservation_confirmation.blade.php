@@ -5,33 +5,32 @@
     <title>予約確認メール</title>
 </head>
 <body>
-    <h2>ご予約ありがとうございます。</h2>
+    <p>{{ $patient->name }} 様</p>
 
-    <p>以下の内容で予約を承りました。</p>
+    <h2>ご予約ありがとうございます</h2>
 
-    <table border="1" cellpadding="5" cellspacing="0">
-        <tr>
-            <th>予約番号</th>
-            <td>{{ $patient->reservation_number ?? '未入力' }}</td>
-        </tr>
-        <tr>
-            <th>予約日</th>
-            <td>{{ $patient->slot->date ?? '未入力' }}</td>
-        </tr>
-        <tr>
-            <th>時間帯</th>
-            <td>{{ \Carbon\Carbon::parse($reservation->slot->start_time)->format('G:i') }} ～ {{ \Carbon\Carbon::parse($reservation->slot->end_time)->format('G:i') }}</td>
-        </tr>
-        <tr>
-            <th>お名前</th>
-            <td>{{ $patient->name }}</td>
-        </tr>
-        <tr>
-            <th>メールアドレス</th>
-            <td>{{ $patient->email ?? '未入力' }}</td>
-        </tr>
-    </table>
+    <p>以下の内容でご予約を承りました。内容をご確認ください。</p>
 
-    <p>キャンセルや変更はお電話にてご連絡ください。</p>
+    <p>
+        【予約番号】 {{ $reservation->reservation_number }}<br>
+        【予約日】 {{ $reservation->slot->date ?? '未入力' }}<br>
+        【時間帯】 {{ \Carbon\Carbon::parse($reservation->slot->start_time)->format('G:i') }} ～ {{ \Carbon\Carbon::parse($reservation->slot->end_time)->format('G:i') }}<br>
+    </p>
+
+    <p>ご来院にあたっての注意事項：</p>
+    <ul>
+        <li>当日は予約時間の10分前までにお越しください。</li>
+        <li>体調に変化がある場合は事前にご連絡ください。</li>
+        <li>キャンセルや変更はお電話にて承っております。</li>
+    </ul>
+
+    <p>※このメールに心当たりがない場合は、お手数ですが当院までご連絡ください。</p>
+
+    <p>どうぞよろしくお願いいたします。</p>
+
+    <p>――――――――――――――――――<br>
+       クリニック名<br>
+       住所・電話番号・営業時間など
+    </p>
 </body>
 </html>

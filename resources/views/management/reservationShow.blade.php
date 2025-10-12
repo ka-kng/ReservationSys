@@ -87,7 +87,16 @@
     {{-- 既往歴 --}}
     <div class="mt-5 break-words">
         <h3>4-1.既往歴・治療中の病気はありますか？</h3>
-        <p>{{ $reservation->patient->past_disease_flag == 0 ? 'はい' : 'いいえ' }}</p>
+        <p>
+            @if (is_null($reservation->patient->past_disease_flag))
+                未入力
+            @elseif ($reservation->patient->past_disease_flag == 0)
+                はい
+            @else
+                いいえ
+            @endif
+        </p>
+
     </div>
 
     <div class="mt-5 break-words">
@@ -98,7 +107,16 @@
     {{-- アレルギー --}}
     <div class="mt-5 break-words">
         <h3>5-1.お薬や食べ物のアレルギーはありますか？</h3>
-        <p>{{ $reservation->patient->allergy_flag == 0 ? 'はい' : 'いいえ' }}</p>
+        <p>
+            @if (is_null($reservation->patient->allergy_flag))
+                未入力
+            @elseif ($reservation->patient->allergy_flag == 0)
+                はい
+            @else
+                いいえ
+            @endif
+        </p>
+
     </div>
 
     <div class="mt-5 break-words">

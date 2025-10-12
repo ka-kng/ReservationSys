@@ -197,12 +197,12 @@
             <div class="flex items-center gap-3 mt-3">
                 <div>
                     <input id="disease_yes" type="radio" name="past_disease_flag" value="0"
-                        {{ $pastDiseaseFlag == 'はい' ? 'checked' : '' }}>
+                        {{ $pastDiseaseFlag === '0' ? 'checked' : '' }}>
                     <label for="disease_yes">はい</label>
                 </div>
                 <div>
                     <input id="disease_no" type="radio" name="past_disease_flag" value="1"
-                        {{ $pastDiseaseFlag == 'いいえ' ? 'checked' : '' }}>
+                        {{ $pastDiseaseFlag === '1' ? 'checked' : '' }}>
                     <label for="disease_no">いいえ</label>
                 </div>
             </div>
@@ -220,12 +220,12 @@
             <div class="flex items-center gap-3 mt-3">
                 <div>
                     <input id="allergy_yes" type="radio" name="allergy_flag" value="0"
-                        {{ $allergyFlag == 'はい' ? 'checked' : '' }}>
+                        {{ $allergyFlag === '0' ? 'checked' : '' }}>
                     <label for="allergy_yes">はい</label>
                 </div>
                 <div>
                     <input id="allergy_no" type="radio" name="allergy_flag" value="1"
-                        {{ $allergyFlag == 'いいえ' ? 'checked' : '' }}>
+                        {{ $allergyFlag === '1' ? 'checked' : '' }}>
                     <label for="allergy_no">いいえ</label>
                 </div>
             </div>

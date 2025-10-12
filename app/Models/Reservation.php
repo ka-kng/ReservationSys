@@ -27,6 +27,6 @@ class Reservation extends Model
     // 予約スロット
     public function slot()
     {
-        return $this->belongsTo(ReservationSlot::class, 'reservation_slot_id');
+        return $this->belongsTo(Schedule::class, 'reservation_slot_id');
     }
 }

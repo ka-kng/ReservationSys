@@ -9,102 +9,107 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
+    private const MORNING = ['09:00', '12:00'];
+    private const AFTERNOON = ['16:00', '18:00'];
+
     public function index(Request $request)
     {
         $year = $request->input('year', now()->year);
         $month = $request->input('month', now()->month);
 
-        $firstDay = \Carbon\Carbon::create($year, $month, 1)->startOfMonth();
+        $firstDay = Carbon::create($year, $month, 1)->startOfMonth();
         $lastDay = $firstDay->copy()->endOfMonth();
 
         $slots = Schedule::whereBetween('date', [$firstDay, $lastDay])
-            ->whereMonth('date', $month)
             ->orderBy('date')
             ->orderBy('start_time')
             ->get();
 
-        $slotsByDate = $slots->groupBy(function ($slot) {
-            return Carbon::parse($slot->date)->format('Y-m-d');
-        });
+        $slotsByDate = $slots->groupBy(fn($slot) => Carbon::parse($slot->date)->format('Y-m-d'));
 
-        return view('management.calendarForm', compact('slots', 'year', 'month', 'firstDay', 'lastDay', 'slotsByDate'));
-    }
-
-    public function create()
-    {
-        //
+        return view('management.calendarForm', compact(
+            'slots',
+            'year',
+            'month',
+            'firstDay',
+            'lastDay',
+            'slotsByDate'
+        ));
     }
 
     public function store(Request $request)
     {
-        $capacity = $request->input('capacity', 1);
+        $request->validate([
+            'dates' => 'required|array',
+            'capacity' => 'required|integer|min:0',
+        ]);
+
+        $capacity = (int) $request->input('capacity');
 
         foreach ($request->input('dates', []) as $date => $type) {
-
-            $existingSlots = Schedule::where('date', $date)->get();
-
-            // 既存予約がないスロットは削除
-            foreach ($existingSlots as $slot) {
-                if ($slot->reservations()->count() === 0) {
-                    $slot->delete();
-                }
-            }
-
-            if ($type === 'holiday') {
-                // 予約がないスロットだけ非表示
-                Schedule::where('date', $date)
-                    ->whereDoesntHave('reservations')
-                    ->update(['is_available' => false]);
-                continue;
-            }
-
-            $timeRanges = match ($type) {
-                'morning' => [['09:00', '12:00']],
-                'afternoon' => [['16:00', '18:00']],
-                'all' => [['09:00', '12:00'], ['16:00', '18:00']],
-                'holiday' => [],
-                default => [],
-            };
-
-            if ($type === 'holiday') {
-                Schedule::where('date', $date)->update(['is_available' => false]);
-                continue;
-            } else {
-                foreach ($timeRanges as [$start, $end]) {
-                    $startTime = Carbon::parse($start);
-                    $endTime = Carbon::parse($end);
-
-                    while ($startTime < $endTime) {
-                        $slotEnd = $startTime->copy()->addMinutes(30);
-
-                        $slot = Schedule::firstOrNew(
-                            [
-                                'date' => $date,
-                                'start_time' => $startTime,
-                                'end_time' => $slotEnd,
-                            ],
-                            [
-                                'slot_type' => $type,
-                                'capacity' => $capacity,
-                                'is_available' => true,
-                            ]
-                        );
-
-                        if ($slot->exists && $slot->reservations()->count() > 0) {
-                            $slot->is_available = true;
-                        } else {
-                            $slot->slot_type = $type;
-                            $slot->capacity = $capacity;
-                            $slot->is_available = true;
-                        }
-
-                        $slot->save();
-                        $startTime = $slotEnd;
-                    }
-                }
-            }
+            $this->processDate($date, $type, $capacity);
         }
 
         return redirect()->back()->with('success', '営業日を登録しました');
+    }
+
+    private function processDate(string $date, string $type, int $capacity): void
+    {
+        // 既存スロットで予約がないものは削除
+        $slots = Schedule::with('reservations')
+            ->where('date', $date)
+            ->get();
+
+        foreach ($slots as $slot) {
+            if ($slot->reservations->isEmpty()) {
+                $slot->delete();
+            }
+        }
+
+        foreach ($this->getTimeRanges($type) as [$start, $end]) {
+            $this->createSlots($date, $start, $end, $type, $capacity);
+        }
+    }
+
+    private function getTimeRanges(string $type): array
+    {
+        return match ($type) {
+            'morning' => [self::MORNING],
+            'afternoon' => [self::AFTERNOON],
+            'all' => [self::MORNING, self::AFTERNOON],
+            default => [],
+        };
+    }
+
+    private function createSlots(string $date, string $start, string $end, string $type, int $capacity): void
+    {
+        $current = Carbon::parse($start);
+        $endTime = Carbon::parse($end);
+
+        while ($current < $endTime) {
+            $slotEnd = $current->copy()->addMinutes(30);
+
+            $slot = Schedule::firstOrNew([
+                'date' => $date,
+                'start_time' => $current,
+                'end_time' => $slotEnd,
+            ]);
+
+            // 既存予約がある場合は capacity 更新しない
+            if ($slot->exists && $slot->reservations->isNotEmpty()) {
+                
+                $slot->is_available = false;
+
+            } else {
+                $slot->fill([
+                    'slot_type' => $type,
+                    'capacity' => $capacity,
+                    'is_available' => true,
+                ]);
+            }
+
+            $slot->save();
+            $current = $slotEnd;
+        }
     }
 }

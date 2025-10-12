@@ -9,25 +9,22 @@ use Illuminate\Http\Request;
 
 class AdminReservationController extends Controller
 {
+    private const VALID_STATUSES = ['reserved', 'visited', 'canceled'];
+
     public function index(Request $request)
     {
-        $query = Reservation::with(['patient', 'slot']);
-
-        if ($request->filled('reservation_number')) {
-            $query->where('reservation_number', 'like', '%' . $request->reservation_number . '%');
-        }
-
-        if ($request->filled('date')) {
-            $query->whereHas('slot', function ($q) use ($request) {
-                $q->whereDate('date', $request->date);
-            });
-        }
-
-        if ($request->filled('status') && $request->status !== 'all') {
-            $query->where('status', $request->status);
-        }
-
-        $reservations = $query->orderBy('created_at', 'desc')->get();
+        $reservations = Reservation::with(['patient', 'slot'])
+            ->when($request->filled('reservation_number'), fn($q) =>
+                $q->where('reservation_number', 'like', '%' . $request->reservation_number . '%')
+            )
+            ->when($request->filled('date'), fn($q) =>
+                $q->whereHas('slot', fn($sq) => $sq->whereDate('date', $request->date))
+            )
+            ->when($request->filled('status') && $request->status !== 'all', fn($q) =>
+                $q->where('status', $request->status)
+            )
+            ->orderByDesc('created_at')
+            ->get();
 
         return view('management.reservationList', compact('reservations'));
     }
@@ -35,32 +32,48 @@ class AdminReservationController extends Controller
     public function show(string $id)
     {
         $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);
-
         return view('management.reservationShow', compact('reservation'));
     }
 
     public function updateStatus(Request $request, string $id)
     {
         $reservation = Reservation::findOrFail($id);
+        $newStatus = $request->input('status');
 
-        $status = $request->input('status');
-
-        if (!in_array($status, ['reserved', 'visited', 'canceled'])) {
+        if (!in_array($newStatus, self::VALID_STATUSES)) {
             return back()->with('error', '無効なステータスです');
         }
 
-        $reservation->status = $status;
-        $reservation->save();
+        $this->adjustSlotCapacity($reservation, $newStatus);
+
+        $reservation->update(['status' => $newStatus]);
 
         return redirect()->route('reservations.index');
+    }
+
+    private function adjustSlotCapacity(Reservation $reservation, string $newStatus): void
+    {
+        $slot = $reservation->slot;
+        if (!$slot) return;
+
+        $oldStatus = $reservation->status;
+
+        if ($oldStatus === 'reserved' && $newStatus === 'canceled') {
+            $slot->increment('capacity');
+        } elseif ($oldStatus === 'canceled' && $newStatus === 'reserved') {
+            if ($slot->capacity <= 0) {
+                abort(400, '空き枠がありません');
+            }
+            $slot->decrement('capacity');
+        }
     }
 
     public function downloadPdf($id)
     {
         $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);
 
-        $pdf = Pdf::loadView('management.reservationPdf', compact('reservation'))->setPaper('a4', 'portrait');
-
-        return $pdf->stream('reservation_' . $reservation->reservation_number . '.pdf');
+        return Pdf::loadView('management.reservationPdf', compact('reservation'))
+            ->setPaper('a4', 'portrait')
+            ->stream('reservation_' . $reservation->reservation_number . '.pdf');
     }
 }

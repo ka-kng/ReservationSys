@@ -22,7 +22,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/reservations/list');
+        return redirect()->intended(route('reservations.index'));
     }
 
     public function destroy(Request $request): RedirectResponse
