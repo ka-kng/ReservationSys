@@ -35,4 +35,7 @@
         <a class="p-4 text-2xl border border-black" href="{{ route('reservations.selectDate') }}">ホームに戻る</a>
     </div>
 
+    <script>
+        window.history.replaceState(null, '', "{{ route('reservations.selectDate') }}");
+    </script>
 @endsection
