@@ -27,13 +27,13 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
 ---
 
 ## 技術スタック
-| **バックエンド** | PHP 8.4 / Laravel 12
-| **フロントエンド** | Blade / Tailwind CSS / JavaScript
-| **データベース** | MySQL 8.0.32
-| **環境構築** | Docker
-| **テスト** | PHPUnit
-| **メール機能**  Mailpit
-| **認証** | Laravel Breeze
+**バックエンド** | PHP 8.4 / Laravel 12<br>
+**フロントエンド** | Blade / Tailwind CSS / JavaScript<br>
+**データベース** | MySQL 8.0.32<br>
+**環境構築** | Docker<br>
+**テスト** | PHPUnit<br>
+**メール機能**  Mailpit<br>
+**認証** | Laravel Breeze
 
 ---
 
@@ -60,21 +60,39 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
 ## 管理画面
 
 ### 予約一覧
-![予約一覧](docs/screenshots/【管理画面】予約一覧.png)
-
-### 患者別詳細ページ
-![患者別詳細ページ](docs/screenshots/【管理画面】患者別詳細ページ.jpeg)
-
-### PDF ダウンロード問診票
-![PDFダウンロード問診票](docs/screenshots/pdfダウンロード問診票.png)
-
-### 営業日指定カレンダー
-![営業日指定カレンダー](docs/screenshots/【管理画面】営業日指定カレンダー.png)
+<table>
+<tr>
+  <td valign="top">
+    予約一覧<br>
+    <img src="docs/screenshots/【管理画面】予約一覧.png" width="300"><br>
+  </td>
+  <td valign="top">
+    患者別詳細ページ<br>
+    <img src="docs/screenshots/【管理画面】患者別詳細ページ.jpeg" width="300"><br>
+  </td>
+    <td valign="top">
+    PDFダウンロード問診票<br>
+    <img src="docs/screenshots/pdfダウンロード問診票.png" width="300">
+  </td>
+</tr>
+<tr>
+    <td valign="top">
+    営業日指定カレンダー<br>
+    <img src="docs/screenshots/【管理画面】営業日指定カレンダー.png" width="300">
+  </td>
+  </tr>
+</table>
 
 ## 患者用画面
-
-### 予約日指定ページ
-![予約日指定ページ](docs/screenshots/予約日指定ページ.png)
-
-### 患者フォーム送信から完了（GIF）
-![予約完了アニメ](docs/screenshots/患者フォーム送信から完了.gif)
+<table>
+<tr>
+  <td valign="top">
+    予約日指定ページ<br>
+    <img src="docs/screenshots/予約日指定ページ.png" width="300"><br>
+  </td>
+  <td valign="top">
+    患者フォーム送信から完了（GIF）<br>
+<img src="docs/screenshots/患者フォーム送信から完了.gif" width="300"><br>
+  </td>
+</tr>
+</table>
