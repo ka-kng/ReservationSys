@@ -36,14 +36,6 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
 **メール機能**  Mailpit<br>
 **認証** | Laravel Breeze
 
-| **バックエンド** | PHP 8.4 / Laravel 12
-| **フロントエンド** | Blade / Tailwind CSS / JavaScript
-| **データベース** | MySQL 8.0.32
-| **環境構築** | Docker
-| **テスト** | PHPUnit
-| **メール機能** | Mailpit
-| **認証** | Laravel Breeze
-
 ---
 
 ## 主な機能
