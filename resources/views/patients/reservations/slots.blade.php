@@ -244,11 +244,13 @@
 
         {{-- ボタン --}}
         <div class="mt-3 text-center">
-            <button type="button" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded" @click="open = true">送信する</button>
+            <button type="button" class="w-full mt-4 py-2 bg-blue-500 text-lg text-white rounded"
+                @click="open = true">送信する</button>
         </div>
-            <a href="{{ route('reservations.selectDate') }}" class="mt-4 text-center text-lg text-white bg-gray-400 py-2 rounded block w-full">
-                戻る
-            </a>
+        <a href="{{ route('reservations.selectDate') }}"
+            class="mt-4 text-center text-lg text-white bg-gray-400 py-2 rounded block w-full">
+            戻る
+        </a>
 
         <div x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white rounded p-6 w-11/12 max-w-md">
@@ -262,4 +264,12 @@
         </div>
 
     </form>
+
+    <script>
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted || window.performance.getEntriesByType('navigation')[0].type === 'back_forward') {
+                window.location.href = "{{ route('reservations.selectDate') }}";
+            }
+        });
+    </script>
 @endsection

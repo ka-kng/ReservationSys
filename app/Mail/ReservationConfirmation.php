@@ -27,7 +27,7 @@ class ReservationConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Reservation Confirmation',
+            subject: '○○病院 予約完了メール',
         );
     }
 
