@@ -80,17 +80,17 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
     患者別詳細ページ<br>
     <img src="docs/screenshots/【管理画面】患者別詳細ページ.jpeg" width="300"><br>
   </td>
-    <td valign="top">
+  <td valign="top">
     PDFダウンロード問診票<br>
     <img src="docs/screenshots/pdfダウンロード問診票.png" width="300">
   </td>
 </tr>
 <tr>
-    <td valign="top">
+  <td valign="top">
     営業日指定カレンダー<br>
     <img src="docs/screenshots/【管理画面】営業日指定カレンダー.png" width="300">
   </td>
-  </tr>
+</tr>
 </table>
 
 ## 患者用画面
@@ -102,7 +102,11 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
   </td>
   <td valign="top">
     患者フォーム送信から完了（GIF）<br>
-<img src="docs/screenshots/患者フォーム送信から完了.gif" width="300"><br>
+    <img src="docs/screenshots/患者フォーム送信から完了.gif" width="300"><br>
+  </td>
+  <td valign="top">
+    患者フォーム送信から完了（GIF）<br>
+    <img src="docs/screenshots/メール確認.jpeg" width="300"><br>
   </td>
 </tr>
 </table>
