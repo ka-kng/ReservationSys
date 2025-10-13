@@ -41,7 +41,7 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
 | **データベース** | MySQL 8.0.32
 | **環境構築** | Docker
 | **テスト** | PHPUnit
-| **メール機能**  Mailpit
+| **メール機能** | Mailpit
 | **認証** | Laravel Breeze
 
 ---
@@ -69,7 +69,7 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
 ## 管理画面
 
 ### 予約一覧
-<<<<<<< HEAD
+
 <table>
 <tr>
   <td valign="top">
@@ -106,23 +106,3 @@ JavaScriptによるバリデーションや動的処理を組み込むことで�
   </td>
 </tr>
 </table>
-
-![予約一覧](docs/screenshots/【管理画面】予約一覧.png)
-
-### 患者別詳細ページ
-![患者別詳細ページ](docs/screenshots/【管理画面】患者別詳細ページ.jpeg)
-
-### PDF ダウンロード問診票
-![PDFダウンロード問診票](docs/screenshots/pdfダウンロード問診票.png)
-
-### 営業日指定カレンダー
-![営業日指定カレンダー](docs/screenshots/【管理画面】営業日指定カレンダー.png)
-
-## 患者用画面
-
-### 予約日指定ページ
-![予約日指定ページ](docs/screenshots/予約日指定ページ.png)
-
-### 患者フォーム送信から完了（GIF）
-![予約完了アニメ](docs/screenshots/患者フォーム送信から完了.gif)
->>>>>>> 07efb50b1dfaba9eeccf18f54e7322a298574f97
