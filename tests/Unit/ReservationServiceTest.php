@@ -24,15 +24,13 @@ class ReservationServiceTest extends TestCase
         $this->service = new ReservationService();
     }
 
-    /**
-     * 正常系: 予約が作成され、患者情報が保存される
-     */
+    // 予約が作成され、患者情報が保存される
     public function test_reservation_is_created_and_patient_is_saved()
     {
-        // メール送信をモック
+        // メール送信は本番ではなく偽装
         Mail::fake();
 
-        // 予約スロット作成
+        // 予約スロットを1件作成
         $slot = ReservationSlot::factory()->create([
             'capacity' => 1,
             'date' => '2025-10-25',
@@ -50,21 +48,22 @@ class ReservationServiceTest extends TestCase
             'email' => 'test@example.com',
         ];
 
-        // セッション付き Request を作成
+        // セッション付き Request を作成（サービスはセッションを使うので必要）
         $store = new Store('test_session', session()->getHandler());
         $request = new \Illuminate\Http\Request();
         $request->setLaravelSession($store);
 
+        // サービスを使って予約作成
         $reservation = $this->service->store($validated, $request);
 
-        // 予約がDBに作成されているか
+        // 予約がDBに作成されているか確認
         $this->assertDatabaseHas('reservations', [
             'id' => $reservation->id,
             'reservation_slot_id' => $slot->id,
             'status' => 'reserved',
         ]);
 
-        // 患者情報がDBに作成されているか
+        // 患者情報がDBに作成されているか確認
         $this->assertDatabaseHas('patients', [
             'id' => $reservation->patient_id,
             'name' => 'テスト太郎',
@@ -84,11 +83,10 @@ class ReservationServiceTest extends TestCase
         $this->assertEquals($reservation->id, session()->get('reservation_id'));
     }
 
-    /**
-     * 異常系: 予約スロットの容量が0の場合、例外が発生する
-     */
+    // 予約スロットの容量が0の場合、例外が発生する
     public function test_reservation_throws_exception_when_slot_capacity_is_zero()
     {
+        // 容量0のスロットを作成
         $slot = ReservationSlot::factory()->create(['capacity' => 0]);
 
         $validated = [
@@ -106,9 +104,11 @@ class ReservationServiceTest extends TestCase
         $request = new \Illuminate\Http\Request();
         $request->setLaravelSession($store);
 
+        // 容量0なので例外が発生することを確認
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('この時間は予約上限に達しています');
 
+        // サービスで予約作成（ここで例外が発生する）
         $this->service->store($validated, $request);
     }
 }
