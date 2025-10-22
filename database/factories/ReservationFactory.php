@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Reservation;
-use App\Models\Schedule;
+use App\Models\ReservationSlot;
 use App\Models\Patient;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,7 +17,7 @@ class ReservationFactory extends Factory
             'reservation_number' => $this->faker->unique()->regexify('[A-Z0-9]{5}'),
             'status' => 'reserved',
             'patient_id' => Patient::factory(),
-            'reservation_slot_id' => Schedule::factory(),
+            'reservation_slot_id' => ReservationSlot::factory(),
         ];
     }
 

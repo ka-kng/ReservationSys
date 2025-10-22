@@ -3,11 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Schedule;
+use App\Models\ReservationSlot;
 
-class ScheduleFactory extends Factory
+class ReservationSlotFactory extends Factory
 {
-    protected $model = Schedule::class;
+    protected $model = ReservationSlot::class;
 
     public function definition(): array
     {

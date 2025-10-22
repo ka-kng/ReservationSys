@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Mail\ReservationConfirmation;
-use App\Models\Schedule;
+use App\Models\ReservationSlot;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Mail;
@@ -13,18 +13,16 @@ class ReservationControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function select_date_page__can_be_rendered()
+    public function test_select_date_page__can_be_rendered()
     {
         $response = $this->get(route('reservations.selectDate'));
         $response->assertStatus(200);
         $response->assertViewIs('patients.reservations.calendar');
     }
 
-    /** @test */
-    public function available_dates_return_json()
+    public function test_available_dates_return_json()
     {
-        $slot = Schedule::factory()->create([
+        $slot = ReservationSlot::factory()->create([
             'is_available' => true,
             'date' => '2025-10-13',
         ]);
@@ -35,12 +33,11 @@ class ReservationControllerTest extends TestCase
         $response->assertJsonFragment(['start' => '2025-10-13']);
     }
 
-    /** @test */
-    public function can_create_reservation()
+    public function test_can_create_reservation()
     {
         Mail::fake(); // メール送信を偽装
 
-        $slot = Schedule::factory()->create([
+        $slot = ReservationSlot::factory()->create([
             'capacity' => 1, // 定員1
             'start_time' => '10:00',
             'end_time' => '11:00'

@@ -4,10 +4,10 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use App\Models\Schedule;
+use App\Models\ReservationSlot;
 use App\Models\User; // 認証ユーザー用
 
-class ScheduleControllerTest extends TestCase
+class ReservationSlotControllerTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -21,8 +21,7 @@ class ScheduleControllerTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    /** @test */
-    public function store_creates_slots_for_valid_dates()
+    public function test_store_creates_slots_for_valid_dates()
     {
         $response = $this->actingAs($this->user)->post(route('calendar.store'), [
             'dates' => [
@@ -50,8 +49,7 @@ class ScheduleControllerTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function store_returns_error_for_negative_capacity()
+    public function test_store_returns_error_for_negative_capacity()
     {
         $response = $this->actingAs($this->user)->post(route('calendar.store'), [
             'dates' => [
@@ -63,11 +61,10 @@ class ScheduleControllerTest extends TestCase
         $response->assertSessionHasErrors(['capacity']);
     }
 
-    /** @test */
-    public function holiday_removes_slots_without_reservations()
+    public function test_holiday_removes_slots_without_reservations()
     {
         // まず普通のスロットを作る
-        $slot = Schedule::create([
+        $slot = ReservationSlot::create([
             'date' => '2025-10-18',
             'slot_type' => 'morning',
             'start_time' => '09:00:00',

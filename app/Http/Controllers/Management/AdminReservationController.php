@@ -4,23 +4,42 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Services\AdminReservationService;
+use App\Services\AdminReservationPdfService;
 use Illuminate\Http\Request;
 
 class AdminReservationController extends Controller
 {
-    private const VALID_STATUSES = ['reserved', 'visited', 'canceled'];
+    // サービスクラスを依存注入
+    private AdminReservationService $reservationService;
+    private AdminReservationPdfService $pdfService;
 
+    public function __construct(AdminReservationService $reservationService, AdminReservationPdfService $pdfService)
+    {
+        $this->reservationService = $reservationService;
+        $this->pdfService = $pdfService;
+    }
+
+    // 予約一覧
     public function index(Request $request)
     {
         $reservations = Reservation::with(['patient', 'slot'])
-            ->when($request->filled('reservation_number'), fn($q) =>
+            // 予約番号で検索
+            ->when(
+                $request->filled('reservation_number'),
+                fn($q) =>
                 $q->where('reservation_number', 'like', '%' . $request->reservation_number . '%')
             )
-            ->when($request->filled('date'), fn($q) =>
+            // スロットの日付で絞り込み
+            ->when(
+                $request->filled('date'),
+                fn($q) =>
                 $q->whereHas('slot', fn($sq) => $sq->whereDate('date', $request->date))
             )
-            ->when($request->filled('status') && $request->status !== 'all', fn($q) =>
+            // ステータスで絞り込み
+            ->when(
+                $request->filled('status') && $request->status !== 'all',
+                fn($q) =>
                 $q->where('status', $request->status)
             )
             ->orderByDesc('created_at')
@@ -29,51 +48,38 @@ class AdminReservationController extends Controller
         return view('management.reservationList', compact('reservations'));
     }
 
+    // 予約詳細
     public function show(string $id)
     {
         $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);
         return view('management.reservationShow', compact('reservation'));
     }
 
+    // ステータス変更
     public function updateStatus(Request $request, string $id)
     {
         $reservation = Reservation::findOrFail($id);
         $newStatus = $request->input('status');
 
-        if (!in_array($newStatus, self::VALID_STATUSES)) {
-            return back()->with('error', '無効なステータスです');
+        try {
+            // サービスでステータス更新＆スロット容量調整
+            $this->reservationService->updateStatus($reservation, $newStatus);
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
         }
-
-        $this->adjustSlotCapacity($reservation, $newStatus);
-
-        $reservation->update(['status' => $newStatus]);
 
         return redirect()->route('reservations.index');
     }
 
-    private function adjustSlotCapacity(Reservation $reservation, string $newStatus): void
-    {
-        $slot = $reservation->slot;
-        if (!$slot) return;
-
-        $oldStatus = $reservation->status;
-
-        if ($oldStatus === 'reserved' && $newStatus === 'canceled') {
-            $slot->increment('capacity');
-        } elseif ($oldStatus === 'canceled' && $newStatus === 'reserved') {
-            if ($slot->capacity <= 0) {
-                abort(400, '空き枠がありません');
-            }
-            $slot->decrement('capacity');
-        }
-    }
-
-    public function downloadPdf($id)
+    /**
+     * PDFダウンロード
+     */
+    public function downloadPdf(string $id)
     {
         $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);
 
-        return Pdf::loadView('management.reservationPdf', compact('reservation'))
-            ->setPaper('a4', 'portrait')
+        // PDF生成してブラウザで表示
+        return $this->pdfService->generate($reservation)
             ->stream('reservation_' . $reservation->reservation_number . '.pdf');
     }
 }

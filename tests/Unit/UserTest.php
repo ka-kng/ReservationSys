@@ -12,8 +12,7 @@ class UserTest extends TestCase
 
     use RefreshDatabase;
 
-    /** @test */
-    public function user_expected_fillable_fields()
+    public function test_user_expected_fillable_fields()
     {
         $user = new User();
 
@@ -23,8 +22,7 @@ class UserTest extends TestCase
         );
     }
 
-    /** @test */
-    public function user_hides_password_and_remenber_token()
+    public function test_user_hides_password_and_remenber_token()
     {
         $user = new User();
 
@@ -34,8 +32,7 @@ class UserTest extends TestCase
         );
     }
 
-    /** @test */
-    public function user_can_be_created_in_database()
+    public function test_user_can_be_created_in_database()
     {
         $user = User::factory()->create([
             'name' => 'Test User',

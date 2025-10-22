@@ -4,15 +4,13 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function login_page_can_be_rendered()
+    public function test_login_page_can_be_rendered()
     {
         $response = $this->get('/login');
 
@@ -20,8 +18,7 @@ class AuthTest extends TestCase
         $response->assertViewIs('management.login');
     }
 
-    /** @test */
-    public function user_can_login_with_correct_credentials()
+    public function test_user_can_login_with_correct_credentials()
     {
         $user = User::factory()->create([
             'login_id' => 'test',
@@ -37,8 +34,7 @@ class AuthTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    /** @test */
-    public function user_can_logout()
+    public function test_user_can_logout()
     {
         $user = User::factory()->create();
 
@@ -46,12 +42,11 @@ class AuthTest extends TestCase
 
         $response = $this->post('logout');
 
-        $response->assertRedirect('/');
+        $response->assertRedirect('/login');
         $this->assertGuest();
     }
 
-    /** @test */
-    public function user_cannot_login_with_incorrect_credentials()
+    public function test_user_cannot_login_with_incorrect_credentials()
     {
         $user = User::factory()->create([
             'login_id' => 'testuser',
@@ -71,8 +66,7 @@ class AuthTest extends TestCase
         $this->assertGuest();
     }
 
-    /** @test */
-    public function guests_cannot_access_reservation_list()
+    public function test_guests_cannot_access_reservation_list()
     {
         $response = $this->get('/reservations/list');
 

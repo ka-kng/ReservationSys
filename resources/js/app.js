@@ -22,13 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(res => res.json())
     .then(events => {
       const calendar = new Calendar(calendarEl, {
-        plugins: [dayGridPlugin],
-        initialView: 'dayGridMonth',
-        locale: jaLocale,
-        events: events,
-        validRange: {
-          start: new Date()
-        },
+        plugins: [dayGridPlugin],       // 月表示プラグイン
+        initialView: 'dayGridMonth',    // 初期表示を月表示に設定
+        locale: jaLocale,               // 日本語
+        events: events,                 // APIで取得したイベントを表示
+        validRange: { start: new Date() }, // 過去の日付は表示させない
         eventContent: function (arg) {
           // arg.event.title は '○'
           const dot = document.createElement('div');
@@ -40,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
           return { domNodes: [dot] };
         },
         eventClick: function (info) {
-          const date = info.event.startStr;
+          const date = info.event.startStr; // クリックした日の文字列を取得
           window.location.href = `/reservations/slots?date=${date}`;
         }
       });
