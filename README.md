@@ -10,7 +10,7 @@ ID: test<br>
 開発・確認用のサンプルユーザーです。
 
 予約フォーム<br>
-URL: https://weightmanagement.sakuraweb.com/login<br>
+URL: https://reservationsys.sakuraweb.com/<br>
 
 
 Laravel 12.31.1 を使用して開発した予約管理システムです。
