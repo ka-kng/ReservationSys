@@ -71,9 +71,7 @@ class AdminReservationController extends Controller
         return redirect()->route('reservations.index');
     }
 
-    /**
-     * PDFダウンロード
-     */
+    // PDFダウンロード
     public function downloadPdf(string $id)
     {
         $reservation = Reservation::with(['patient', 'slot'])->findOrFail($id);

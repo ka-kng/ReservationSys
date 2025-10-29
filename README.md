@@ -1,5 +1,18 @@
 # ReservationSys（医療機関向け予約管理システム）
 
+管理画面<br>
+URL: https://reservationsys.sakuraweb.com/reservations/list<br>
+
+テストユーザー<br>
+ID: test<br>
+パスワード: password<br>
+
+開発・確認用のサンプルユーザーです。
+
+予約フォーム<br>
+URL: https://weightmanagement.sakuraweb.com/login<br>
+
+
 Laravel 12.31.1 を使用して開発した予約管理システムです。
 
 患者はフォームから「氏名」「連絡先」「予約日時」「症状」などを入力するだけで簡単に予約が完了し、
